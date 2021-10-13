@@ -7,7 +7,7 @@ Faded Theme For Obsidian By Josh Kasap![](Images/Faded.png)
 - This theme makes use of the ***Style Settings Plugin*** https://github.com/mgmeyers/obsidian-style-settings It's encuraged to install this plugin in order to gain access various customizable options for this theme.
 ## Features 
 ### Advanced Sliding Panes
-Faded uses advanced CSS to further improve sliding panes in obsidian. Now panes will scroll infinitely off the page allowing to stack panes to you're hearts content. Advanced sliding panes also allow you to implement far more layouts without breaking. Namely you can now split the view horizontally however many times you like to make 2 or more rows. Each row has full support for infinite sliding panes. This allows you to nest sliding rows, inside sliding rows, inside sliding rows, however many times you feel is necessary. ![](Images/Advanced Sliding Panes Layouts.png)
+Faded uses advanced CSS to further improve sliding panes in obsidian. Now panes will scroll infinitely off the page allowing to stack panes to you're hearts content. Advanced sliding panes also allow you to implement far more layouts without breaking. Namely you can now split the view horizontally however many times you like to make 2 or more rows. Each row has full support for infinite sliding panes. This allows you to nest sliding rows, inside sliding rows, inside sliding rows, however many times you feel is necessary. ![](Images/AdvancedSlidingPanesLayouts.png)
 
 ### Custom HTML Snippets
 Faded ATM supports HTML snippets to help spice up your notes. 
