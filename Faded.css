@@ -1,0 +1,2347 @@
+/* @settings
+name: Faded Theme - Miscellaneous Options
+id: test
+settings:
+    - 
+        id: Gradient-Bullet-Point-Lines
+        title: Gradient Bullet Point Lines
+        description: Adds a gradient to bullet point lines
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Enabled
+                value: gradientBulletPointLines
+            - 
+                label: Disabled
+                value: none
+    -
+        id: Check-List-Strikeout
+        title: Check List Strikeout
+        description: Adds a strikeout to checked Items
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Enabled
+                value: none
+            - 
+                label: Disabled
+                value: checkListStrikeout
+*/
+
+/* @settings
+
+name: Faded Theme - Andy Sliding Panes Options
+id: Faded-Theme-Andy-Sliding-Panes-Options
+settings:
+    - 
+        id: Enable-Stacked-Panes
+        title: Enable Stacked Panes
+        description: Enable to allow panes/pages to stack side by side - "Requires restart if restored to defualt"
+        type: class-select
+        allowEmpty: false
+        default: stackedPanes
+        options:
+            - 
+                label: Enabled
+                value: stackedPanes
+            - 
+                label: Disabled
+                value: 
+
+    - 
+        id: Minimum-Page-Width
+        title: Minimum Page Width
+        description: The minimum allowed width of a page
+        type: variable-number-slider
+        default: 500
+        format: px
+        min: 300
+        max: 1920
+        step: 20
+*/
+
+/*
+name: Faded Theme - Alternate Themes
+id: Faded-Theme-Alternate-Themes
+settings:
+    - 
+        id: Red-Accent-1-Dark
+        title: Red-Accent-1-Dark
+        type: variable-select
+        default: pie
+        format: hex
+        options:
+            - ffffff
+            - 963232
+            - f0f066
+*/
+
+
+
+
+/* SECTION ------------------------------- Style Settings Plugin Defualt Values START ------------------------------- */
+.theme-dark {
+    --Minimum-Page-Width: 500px;
+}
+
+
+
+/* SECTION ------------------------------- Style Settings Plugin Defualt Values END ------------------------------- */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/*Icon: ITS Icons*/
+@font-face {
+    font-family: 'its';
+    src: url('data:application/octet-stream;base64,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') format('woff'),
+         url('data:application/octet-stream;base64,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WFAbUllYIDxZLrEwARQrsAZDLrAwKy2wRSywABawBCWwBCYgICBGI0dhsAwjQi5HI0cjYbALQysjIDwgLiM4sTABFCstsEYssQoEJUKwABawBCWwBCUgLkcjRyNhILAGI0KxDABCsAtDKyCwYFBYILBAUVizBCAFIBuzBCYFGllCQiMgR7AGQ7ACYiCwAFBYsEBgWWawAWNgILABKyCKimEgsARDYGQjsAVDYWRQWLAEQ2EbsAVDYFmwAyWwAmIgsABQWLBAYFlmsAFjYbACJUZhOCMgPCM4GyEgIEYjR7ABKyNhOCFZsTABFCstsEcssQA6Ky6xMAEUKy2wSCyxADsrISMgIDywBiNCIzixMAEUK7AGQy6wMCstsEkssAAVIEewACNCsgABARUUEy6wNiotsEossAAVIEewACNCsgABARUUEy6wNiotsEsssQABFBOwNyotsEwssDkqLbBNLLAAFkUjIC4gRoojYTixMAEUKy2wTiywCiNCsE0rLbBPLLIAAEYrLbBQLLIAAUYrLbBRLLIBAEYrLbBSLLIBAUYrLbBTLLIAAEcrLbBULLIAAUcrLbBVLLIBAEcrLbBWLLIBAUcrLbBXLLMAAABDKy2wWCyzAAEAQystsFksswEAAEMrLbBaLLMBAQBDKy2wWyyzAAABQystsFwsswABAUMrLbBdLLMBAAFDKy2wXiyzAQEBQystsF8ssgAARSstsGAssgABRSstsGEssgEARSstsGIssgEBRSstsGMssgAASCstsGQssgABSCstsGUssgEASCstsGYssgEBSCstsGcsswAAAEQrLbBoLLMAAQBEKy2waSyzAQAARCstsGosswEBAEQrLbBrLLMAAAFEKy2wbCyzAAEBRCstsG0sswEAAUQrLbBuLLMBAQFEKy2wbyyxADwrLrEwARQrLbBwLLEAPCuwQCstsHEssQA8K7BBKy2wciywABaxADwrsEIrLbBzLLEBPCuwQCstsHQssQE8K7BBKy2wdSywABaxATwrsEIrLbB2LLEAPSsusTABFCstsHcssQA9K7BAKy2weCyxAD0rsEErLbB5LLEAPSuwQistsHossQE9K7BAKy2weyyxAT0rsEErLbB8LLEBPSuwQistsH0ssQA+Ky6xMAEUKy2wfiyxAD4rsEArLbB/LLEAPiuwQSstsIAssQA+K7BCKy2wgSyxAT4rsEArLbCCLLEBPiuwQSstsIMssQE+K7BCKy2whCyxAD8rLrEwARQrLbCFLLEAPyuwQCstsIYssQA/K7BBKy2whyyxAD8rsEIrLbCILLEBPyuwQCstsIkssQE/K7BBKy2wiiyxAT8rsEIrLbCLLLILAANFUFiwBhuyBAIDRVgjIRshWVlCK7AIZbADJFB4sQUBFUVYMFktAEu4AMhSWLEBAY5ZsAG5CAAIAGNwsQAHQrEAACqxAAdCsQAKKrEAB0KxAAoqsQAHQrkAAAALKrEAB0K5AAAACyq5AAMAAESxJAGIUViwQIhYuQADAGREsSgBiFFYuAgAiFi5AAMAAERZG7EnAYhRWLoIgAABBECIY1RYuQADAABEWVlZWVmxAA4quAH/hbAEjbECAESzBWQGAERE') format('truetype');
+}
+
+:root {
+    /* --font: "Fira Code", monospace; */
+    /* --font: "Courier Prime"; */
+    --font: "Lora", "Courier Prime", "Fira Code", "monospace";
+    --its: 'its';
+}
+
+/* :root {
+    --font: 'Calisto MT', 'Palatino Black', 'Book Antiqua', 'Georgia', 'Suez One', serif;
+} */
+
+/* :root {
+    --default-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; 
+    --mermaid-font: var(--default-font);
+    --reveal-font: var(--default-font);
+    --font-monospace: 'Fira Code', 'Fira Code Medium', 'Source Code Pro', monospace;
+    --font: 'Calisto MT', 'Palatino Black', 'Book Antiqua', 'Georgia', 'Suez One', serif; 
+    --pre-font: var(--default-font) !important;
+    --ed-font: var(--default-font) !important;
+    
+
+    --rmx: 'remixicon';
+    --mdi: 'Material Icons Sharp';
+    --its: 'its';
+    --fa5: 'Font Awesome 5 Free Solid';
+    --rpg: 'rpg-awesome';
+} */
+
+body {
+    font-family: var(--font); 
+}
+
+
+
+
+/* SECTION ------------------------------- Core Theme Colors START ------------------------------- */
+
+
+.workspace {
+    background-color: var(--background-secondary);
+}
+
+.theme-dark, .theme-light {
+    /*Sizes*/
+    --radius: 0px;
+
+    --micro: 70px;
+    --tiny: 100px;
+    --small: 200px;
+    --small-med: 300px;
+    --med-small: 400px;
+    --medium: 500px;
+    --med-tall: 600px;
+    --tall: 700px;
+    
+    /*Colors*/
+    --slide-shadow: rgba(0, 28, 74, 0.15);
+    --text-dl: #e5ebee;
+    
+    /*Sizes*/
+    /* --scroll-size: 7px;
+    --lh: 1.5em;
+    --vault-f: var(--font);
+    --f-text: 16px;
+    --f-small: .88em;
+    --f-tag: 13px;
+
+    --f-s-ui: 16px;
+    --f-s-sb: 16px;
+    --f-s-nt: 16px;
+
+    --f-s-pre: 16px;
+    --f-s-text: 1em;
+    --f-s-h: 34px;
+    --f-w-h: 600;
+    --h-line: 100%;
+    --head-h: 15px; */
+    
+    /*Other*/
+    --hr-sym: "\e817";
+    --hr-f: var(--its);
+    --tag-o: 1px;
+    --bullet: "\e802";
+    --bul-f: var(--its);
+    --b-line: 2px;
+
+    /*--Specific--*/
+    /*Fonts*/
+    --sphd-pre-ff-1: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-pre-ff-2: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-pre-ff-3: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-pre-ff-4: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-pre-ff-5: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-pre-ff-6: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-ed-ff-1: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-ed-ff-2: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-ed-ff-3: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-ed-ff-4: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-ed-ff-5: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+    --sphd-ed-ff-6: 'Calisto MT', 'Palatino Black', 'Suez One', serif;
+
+    /*Size*/
+    --sphd-pre-fs-1: 34px;
+    --sphd-pre-fs-2: 30px;
+    --sphd-pre-fs-3: 26px;
+    --sphd-pre-fs-4: 24px;
+    --sphd-pre-fs-5: 20px;
+    --sphd-pre-fs-6: 18px;
+    --sphd-ed-fs-1: 34px;
+    --sphd-ed-fs-2: 28px;
+    --sphd-ed-fs-3: 24px;
+    --sphd-ed-fs-4: 22px;
+    --sphd-ed-fs-5: 20px;
+    --sphd-ed-fs-6: 18px;
+
+    /**/
+    --em-pre-f: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --em-ed-f: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --b-pre-f: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --b-ed-f: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --del-pre-f: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --del-ed-f: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    /*Plugin: 5e Statblock*/
+    --statblock-primary-color: var(--soft-text) !important;
+    --statblock-background-color: transparent;
+    --statblock-bar-color: var(--accent);
+}
+
+.theme-dark {
+    /* NOTE Find and replace all instances of a below color with a new color name then add that new color to the list*/
+    /* Custom Colors Hex*/
+    --Transparent: #ffffff00;
+    --Pure-White: #ffffff;
+    --Pure-Black: #000000;
+
+
+    --White-Accent-1: #dcddde;
+    --White-Accent-2: #aab3ca;
+    --Gold-Accent-1-Litest: #f1e4c8;
+    --Gold-Accent-1-Liter: #e4d1aa;
+    --Gold-Accent-1-Lite: #ddc48e;
+    --Gold-Accent-1: #d6ba7c;
+    --Red-Accent-1-Lite:#b94a4a;
+    --Red-Accent-1-Lighten: #b34141; 
+    --Red-Accent-1: #ad3939;
+    --Red-Accent-1-Dark: #963232;
+    --Red-Accent-1-Darker: #752727;
+    --Red-Accent-1-Darkest-Lighten: #521c1c;
+    --Red-Accent-1-Darkest: #461818;
+    --Red-Accent-2: #aa3c5d;
+    --Grey-Accent-1-Lite-Lighten: #2f3641;
+    --Grey-Accent-1-Lite: #252b33;
+    --Grey-Accent-1-Lighten: #232830;
+    --Grey-Accent-1: #1a1e24;
+    --Grey-Accent-1-Darken: #171a1f;
+    --Grey-Accent-1-Dark: #14171b;
+    --Grey-Accent-1-Darker: #0b0f13;
+    --Grey-Accent-1-Darker-Darken: #090c0f;
+    --Grey-Accent-1-Darkest: #050708;
+    --Grey-Accent-2: #919191;
+    --Grey-Accent-3-Lite: #414344;
+    --Grey-Accent-3: #2a2c2d;
+    --Grey-Accent-3-Dark: #121415;
+    --Blue-Grey-Accent-1: #8292a2;
+    --Blue-Accent-1-Lite: #16bfe0;
+    --Blue-Accent-1: #2799ad;
+    --Blue-Accent-2-Dark: #2255a1;
+    --Blue-Accent-2:#2f61ac;
+    --Purple-Accent-1: #797fd8;
+    --Purple-Accent-2: #ae81ff;
+
+    /* NOTE Neon Green Theme */
+    /* --Gold-Accent-1-Liter: #82d688;
+    --Gold-Accent-1-Lite: #75cf7b;
+    --Gold-Accent-1: #1eca49;
+    --Gold-Accent-1: #62c769;
+    --Red-Accent-1-Lite:#88dab1;
+    --Red-Accent-1-Lighten: #71cfa0; 
+    --Red-Accent-1: #5dc490;
+    --Red-Accent-1-Dark: #43bd80;
+    --Red-Accent-1-Darker: #2cb470;
+    --Red-Accent-1-Darkest-Lighten: #23b36b;
+    --Red-Accent-1-Darkest: #16aa60;
+    --Red-Accent-2: #aa3c5d; */
+
+    /* NOTE Megenta Theme */
+    /* --Gold-Accent-1-Liter: #8393c7;
+    --Gold-Accent-1-Lite: #7787bd;
+    --Gold-Accent-1: #6c7db6;
+    --Red-Accent-1-Lite:#8a3058;
+    --Red-Accent-1-Lighten: #882b55; 
+    --Red-Accent-1: #82264F;
+    --Red-Accent-1-Dark: #752549;
+    --Red-Accent-1-Darker: #75264a;
+    --Red-Accent-1-Darkest-Lighten: #7e254d;
+    --Red-Accent-1-Darkest: #642742;
+    --Red-Accent-2: #aa3c5d; */
+
+    /* NOTE Neon Orange Theme */
+    /* --Gold-Accent-1-Liter: #ffaf47;
+    --Gold-Accent-1-Lite: #ffaf47;
+    --Gold-Accent-1: #ffaf47;
+    --Red-Accent-1-Lite:#eb892d;
+    --Red-Accent-1-Lighten: #e7872c; 
+    --Red-Accent-1: #e7801f;
+    --Red-Accent-1-Dark: #df7817;
+    --Red-Accent-1-Darker: #e07816;
+    --Red-Accent-1-Darkest-Lighten: #cf6b0c;
+    --Red-Accent-1-Darkest: #cf6b0c;
+    --Red-Accent-2: #aa3c5d; */
+
+    /* NOTE  Theme */
+    /* --Gold-Accent-1-Litest: #a32708;
+    --Gold-Accent-1-Liter: #a32708;
+    --Gold-Accent-1-Lite: #a32708;
+    --Gold-Accent-1: #a32708;
+    --Red-Accent-1-Lite:#7c2c2c;
+    --Red-Accent-1-Lighten: #702b2b; 
+    --Red-Accent-1: #6d2222;
+    --Red-Accent-1-Dark: #5a1b1b;
+    --Red-Accent-1-Darker: #5a1c1c;
+    --Red-Accent-1-Darkest-Lighten: rgb(112, 37, 37);
+    --Red-Accent-1-Darkest: #551919;
+    --Red-Accent-2: #6d2222; */
+
+    /* RGB Custom Colors NOTE RGB must be used directly*/
+    --RGB-Gold-Accent-1: 214, 186, 124;
+    --RGB-Red-Accent-1: 173, 57, 57;
+    --RGB-Red-Accent-1-Dark: 150, 50, 50;
+    --RGB-Red-Accent-1-Darker: 117, 39, 39;
+    --RGB-Red-Accent-1-Darkest: 70, 24, 24;
+    --RGB-Grey-Accent-1-Dark: 20, 23, 27;
+    --RGB-Grey-Accent-1-Darker: 11, 15, 19;
+    --RGB-Grey-Accent-1-Darkest: 5, 7, 8;
+  
+
+
+    /* Color Groups (Create with custom colors) */
+    --Pure-White-Accent-1: var(--Pure-White);
+    --Pure-Black-Accent-1: var(--Pure-Black); /* Not Used */
+    --Transparent-Accent-1: var(--Transparent);
+
+    --Primary-Accent-1-Litest: var(--Gold-Accent-1-Litest); /* Not Used */
+    --Primary-Accent-1-Liter: var(--Gold-Accent-1-Liter);
+    --Primary-Accent-1-Lite: var(--Gold-Accent-1-Lite); /* Not Used */
+    --Primary-Accent-1: var(--Gold-Accent-1);
+    --Seconday-Accent-1-Lite: var(--Red-Accent-1-Lite);
+    --Seconday-Accent-1-Lighten: var(--Red-Accent-1-Lighten); /* Not Used */
+    --Seconday-Accent-1: var(--Red-Accent-1);
+    --Seconday-Accent-1-Dark: var(--Red-Accent-1-Dark);
+    --Seconday-Accent-1-Darker: var(--Red-Accent-1-Darker);
+    --Seconday-Accent-1-Darkest: var(--Red-Accent-1-Darkest);
+    --Seconday-Accent-1-Darkest-Lighten: var(--Red-Accent-1-Darkest-Lighten); /* Not Used */
+    --Seconday-Accent-2: var(--Red-Accent-2); 
+    --Neutral-Accent-1-Lite-Lighten: var(--Grey-Accent-1-Lite-Lighten);
+    --Neutral-Accent-1-Lite: var(--Grey-Accent-1-Lite);
+    --Neutral-Accent-1-Lighten: var(--Grey-Accent-1-Lighten);
+    --Neutral-Accent-1: var(--Grey-Accent-1);
+    --Neutral-Accent-1-Darken: var(--Grey-Accent-1-Darken);
+    --Neutral-Accent-1-Dark: var(--Grey-Accent-1-Dark);
+    --Neutral-Accent-1-Darker: var(--Grey-Accent-1-Darker);
+    --Neutral-Accent-1-Darker-Darken: var(--Grey-Accent-1-Darker-Darken);
+    --Neutral-Accent-1-Darkest: var(--Grey-Accent-1-Darkest);
+    --Neutral-Accent-2: var(--Grey-Accent-2);
+    --Neutral-Accent-3-Lite: var(--Grey-Accent-3-Lite);
+    --Neutral-Accent-3: var(--Grey-Accent-3);
+    --Neutral-Accent-3-Dark: var(--Grey-Accent-3-Dark);
+    --Neutral-Accent-4: var(--Blue-Grey-Accent-1);
+    --Special-Accent-1-Lite: var(--Blue-Accent-1-Lite);
+    --Special-Accent-1: var(--Blue-Accent-1);
+    --Special-Accent-2: var(--Blue-Accent-2);
+    --Special-Accent-2-Dark: var(--Blue-Accent-2-Dark); /* Not Used */
+    --Special-Accent-3: var(--Purple-Accent-1);
+    --Special-Accent-4: var(--Purple-Accent-2);
+
+    /* RGB Color Groups (Create with custom colors) NOTE RGB must be used directly*/
+    --RGB-Seconday-Accent-1: var(--RGB-Red-Accent-1); /* Not Used */
+    /* --RGB-Seconday-Accent-1-Dark: var(
+    --RGB-Seconday-Accent-1-Darker: var(
+    --RGB-Seconday-Accent-1-Darkest: var( */
+    --RGB-Neutral-Accent-1: var(--RGB-Grey-Accent-1-Dark); /* Not Used */
+    --RGB-Neutral-Accent-2: var(--RGB-Grey-Accent-1-Darker);
+    --RGB-Neutral-Accent-3: var(--RGB-Grey-Accent-1-Darker-Darken); /* Not Used */
+
+
+    
+    
+
+    /* NOTE Headers Lines */
+    --text-title-h1-alt: linear-gradient(90deg, var(--Primary-Accent-1) 0%, var(--Pure-White-Accent-1) 15%, var(--Pure-White-Accent-1) 85% , var(--Primary-Accent-1) 100%);
+    --text-title-h1: linear-gradient(90deg, var(--Pure-White-Accent-1) 0%, var(--Primary-Accent-1) 15%, var(--Primary-Accent-1) 100%);
+    --text-title-h2: linear-gradient(90deg, var(--Seconday-Accent-1) 0%, var(--Primary-Accent-1) 20%, var(--Primary-Accent-1) 100%);
+    --text-title-h2-alt: linear-gradient(90deg, var(--Pure-White-Accent-1) 0%, var(--Seconday-Accent-1) 15%, var(--Seconday-Accent-1) 85% , var(--Pure-White-Accent-1) 100%);
+    --text-title-h3: linear-gradient(90deg, var(--Special-Accent-1) 0%, var(--Primary-Accent-1) 25%, var(--Primary-Accent-1) 100%);
+    --text-title-h4: linear-gradient(90deg, var(--Special-Accent-3) 0%, var(--Primary-Accent-1) 30%, var(--Primary-Accent-1) 100%);
+    --text-title-h5: linear-gradient(90deg, var(--Seconday-Accent-2) 0%, var(--Primary-Accent-1) 35%, var(--Primary-Accent-1) 100%);
+    --text-title-h6: linear-gradient(90deg, var(--Neutral-Accent-2) 0%, var(--Primary-Accent-1) 40%, var(--Primary-Accent-1) 100%);
+
+    --text-highlight-bg: rgba(168, 60, 60, 0.4); /*Text highlights*/
+    --text-highlight-bg-active: rgba(253, 115, 115, 0.4); /*Searched Result Highlight*/
+    --text-selection: rgba(122, 20, 20, 0.4); /*Cursor dragged highlights*/
+    --text-selection: rgba(var(--RGB-Red-Accent-1-Darkest), 0.85);
+    --text-selection-border: rgba(var(--RGB-Red-Accent-1-Darkest), 0.0); /*This doesn't make senese but fixes highlight border in Code Mirror Block  */
+
+    --modal-overlay-bg: rgba(var(--RGB-Grey-Accent-1-Darker), 0.85); /*Background of modal overlay*/
+
+    /* Main Page Color V1 */
+    /* --background-primary: #202020;
+    --background-primary-alt: #1a1a1a;
+    --background-secondary: #161616;
+    --background-nav-alt: #1f201f;
+    --background-nav: #151615; */
+    /*--background-secondary-alt: var(--Black-Accent-1);*/ /*Sidebar Title background*/
+
+    /* Main Page Color V2 */
+    --background-primary: var(--Neutral-Accent-1);
+    --background-primary-alt: var(--Neutral-Accent-1-Darker);
+    --background-secondary: var(--Neutral-Accent-1-Dark);
+    --background-nav-alt: #1f201f;
+    --background-nav: #151615;
+    --background-secondary-alt: var(--Neutral-Accent-1-Darkest);
+
+    /* Main Page Color V3 */
+    /* --background-primary: var(--Neutral-Accent-1);
+    --background-primary-alt: var(--Neutral-Accent-1-Darker);
+    --background-secondary: var(--Neutral-Accent-1-Dark);
+    --background-nav-alt: #1f201f;
+    --background-nav: #151615;
+    --background-secondary-alt: var(--Neutral-Accent-1-Darkest); */
+    
+    --background-modifier-border: var(--table); /*Border outline of quotes, tables, line breaks*/
+    
+    --background-modifier-form-field: rgba(0, 0, 0, 0.3); /*Search Field Bg Color*/
+    --background-modifier-form-field-highlighted: rgba(52, 123, 237, 0.22); /*Searched Highlight Color*/
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3); /*Outershadow*/
+    --background-modifier-success: #197300; /*Publish Upload Success Background*/
+    --background-modifier-error: #3d0000; /*Delete Screen Button*/
+    --background-modifier-error-rgb: 61, 0, 0; /*??*/
+    --background-modifier-error-hover: #470000; /*??*/
+    --background-modifier-cover: black; /*Obsidian Title Bar Bg*/
+    
+    --text-accent: var(--Primary-Accent-1); /*Links*/
+    --text-accent-hover: var(--Primary-Accent-1); /*Links hover*/
+    --text-on-accent: var(--White-Accent-1); /*Program Title bar text*/
+    --text-normal: var(--White-Accent-1); /*Text body of Page*/
+    --text-muted: #888; /*Text darker for sidebar, toggles, inactive, tags, etc*/
+    --text-faint: #555; /*Link brackets color & Gutter Numbers*/
+    --text-error: #ff3333; /*??*/
+    --text-error-hover: #990000; /*??*/
+    --text-nav-selected: #000000; /*??*/
+    
+    --interactive-normal: var(--Neutral-Accent-1); /*Button Color Color For Search only?*/
+    --interactive-hover: var(--Neutral-Accent-1-Lighten); /*Button Color Color For Search only?*/
+    --interactive-accent: var(--Primary-Accent-1); /*Workspace Page Title Underline & Button Color In Settings*/
+    --interactive-text-on-accent: var(--Neutral-Accent-1-Darkest); /*Text Of Buttons In Settings*/
+    --interactive-accent-hover: var(--Primary-Accent-1); /*Menu Button Hover*/
+    --interactive-accent-rgb: 214, 186, 124; /*Publish item select*/
+    --interactive-success: #599049; /*??*/
+    
+    --scrollbar-bg: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
+    --highlight-mix-blend-mode: lighten;
+
+    /*--DEFAULT VARIABLES--*/
+
+    /*Compatibility Color Recoloring*/    
+    --deep-dark-accent: #3f1010 /*#2f1010*/;
+    --dark-accent: #652121 /*#571a1a, #53201F*/;
+    --lite-accent: #e06c75;
+    --accent: var(--Seconday-Accent-1-Dark);
+    --accent2: var(--Neutral-Accent-2);
+    --accent2-lite: #61afef;
+    --bg: #252c36;
+    --fg: #cfd7dd;
+    --side-bar: var(--note);
+    --outer-bar: #0b0f13 /*#0e0f15*/;
+    --dark-sidebar: #0d1014;
+    --inactive: #586477;
+    --outline: var(--outer-bar);
+
+    --folder: var(--Seconday-Accent-1);
+    --file: var(--White-Accent-2);
+    --f-icon: var(--inactive);
+    --f-hover: var(--accent);
+    --lines: var(--hr);
+        
+    --note: #1a1e24 /*#0d131c*/;
+    --text: var(--White-Accent-1);
+    --headers: var(--Primary-Accent-1);
+    --soft-text: #aab3ca/*#d04e4e*/;
+    --code-text: #fa4545;
+    --footnote: #6e7e89;
+
+    --code-bg: #232831;
+    --embed-bg: var(--dark-sidebar) /*#111417*/;
+    --aside-bg: #11151d;
+
+    --th: var(--dark-accent);
+    --td: #06080c60;
+    
+    --hvr: var(--text-highlight-bg);
+    --hvr2: var(--text-selection);
+    
+    --tag: var(--th);
+    --table: #283846;
+    --hr: var(--Seconday-Accent-1);
+    --i-at: #bf5e5e;
+    
+    --graph-bg: var(--outer-bar);
+    --graph-lines: var(--dark-accent);
+    --graph-node: var(--fg);
+    --graph-fill: var(--headers);
+    --graph-404: #727e93;
+    --graph-img: #4c78cc /*#ff86be*/;
+    --graph-tag: var(--headers);
+    --graph-focused: var(--text-highlight-bg-active);
+
+
+    /*CSS Specifics*/
+    --b-l-1: #683732;
+    --b-l-2: #a13531;
+    --b-l-3: #fc4435;
+    --b-l-4: #ff6a79;
+    --b-l-5: #ac7782;
+    --b-l-6: #d6b6bc;
+
+    --sphd-pre-1: #7c2929;
+    --sphd-pre-2: #652121;
+    --sphd-pre-3: #571d1d;
+    --sphd-pre-4: #381919;
+    --sphd-pre-5: #424c61;
+    --sphd-pre-6: #2e333d;
+    --sphd-ed-1: #7c2929;
+    --sphd-ed-2: #652121;
+    --sphd-ed-3: #571d1d;
+    --sphd-ed-4: #381919;
+    --sphd-ed-5: #424c61;
+    --sphd-ed-6: #2e333d;
+
+    --em-pre-c: var(--text);
+    --em-ed-c: var(--text);
+    --b-pre-c: var(--text);
+    --b-ed-c: var(--text);
+    --del-pre-c: var(--text);
+    --del-ed-c: var(--text);
+}
+
+.theme-light {
+    --background-primary: var(--note); /*Page background*/
+    --background-primary-alt: var(--outer-bar); /*Page Title background active*/
+    --background-secondary: var(--side-bar); /*Sidebar background*/
+    --background-secondary-alt: var(--outer-bar); /*Sidebar Title background*/
+    
+    --background-modifier-border: var(--table); /*Border outline of quotes, tables, line breaks*/
+    
+    --background-modifier-form-field: rgba(0, 0, 0, 0.3); /*??*/
+    --background-modifier-form-field-highlighted: rgba(240, 131, 131, 0.22); /*Search Bar Active Highlight*/
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3); /*??*/
+    --background-modifier-success: #deedd9; /*Publish Upload Success Background*/
+    --background-modifier-error: var(--accent); /*Delete Screen Button*/
+    --background-modifier-error-rgb: 240, 131, 131; /*Ctrl F Search Background*/
+    --background-modifier-error-hover: #470000; /*??*/
+    --background-modifier-cover: var(--deep-dark-accent); /*Obsidian Title Bar*/
+    
+    --text-on-accent: var(--White-Accent-1); /*Program Title bar text*/
+    --text-muted: var(--soft-text); /*Text darker for sidebar, toggles, inactive, tags, etc*/
+    --text-normal: var(--text); /*Text body of Page*/
+    --text-accent: var(--accent2-lite); /*Links*/
+    --text-accent-hover: var(--accent); /*Links hover*/
+    --text-faint: #4e5b6f; /*Link brackets color*/
+    --text-error: #ff3333; /*??*/
+    --text-error-hover: #990000; /*??*/
+    
+    --text-highlight-bg: rgba(255, 0, 0, 0.212); /*Text highlights*/
+    --text-highlight-bg-active: rgba(253, 115, 115, 0.4); /*Search Highlight*/
+    --text-selection: rgba(229, 149, 149, 0.37); /*Cursor dragged highlights*/
+    
+    --interactive-normal: var(--outer-bar); /*Button background Color*/
+    --interactive-hover: var(--embed-bg)/*#5d2b2b*/; /*Button hover text*/
+    --interactive-accent: var(--headers); /*Workspace Page Title Underline*/
+    --interactive-accent-rgb: 52, 123, 237; /*Publish item select, Resize Handle*/
+    --interactive-accent-hover: var(--lite-accent); /*Menu Button Hover*/
+    --interactive-success: #197300; /*??*/
+    
+    --scrollbar-bg: rgba(134, 173, 218, 0.157);
+    --scrollbar-thumb-bg: rgba(108, 148, 212, 0.219);
+    --highlight-mix-blend-mode: darken; /*Search Highlight Mode*/
+
+    /*--DEFAULT VARIABLES--*/    
+    
+    /*Compatibility Color Recoloring*/    
+    --deep-dark-accent: #2f1010;
+    --dark-accent: #ffeded;
+    --lite-accent: #a35158;
+    --accent: #912e2e;
+    --accent2: #aac1d3/*#4c78cc*/;
+    --accent2-lite: #5599d0;
+    --bg: #e1e9f6;
+    --fg: var(--accent) /*#9f0202*/;
+    --side-bar: var(--note);
+    --outer-bar: #eef3fd;
+    --dark-sidebar: #f1f5ff;
+    --inactive: #a6bbde /*#91a3c1*/;
+    --outline: var(--bg);
+    
+    --folder: #ce6d6d;
+    --file: #7e8ea3;
+    --f-icon: var(--inactive);
+    --f-hover: var(--accent);
+    --lines: #b5c2d8;
+    
+    --headers: #c14343;
+    --note: #f8fbff;
+    --text: #697580;
+    --soft-text: #d04e4e;
+    --code-text: #ea4262;
+    --footnote: #8996a0;
+
+    --code-bg: var(--embed-bg) /*#eef6ff*/;
+    --embed-bg: var(--dark-sidebar) /*#ebf1f8*/;
+    --aside-bg: var(--dark-sidebar);
+    
+    --th: var(--headers);
+    --td: #d0ddef62;
+    
+    /*Highlights*/
+    --hl-md: rgba(199, 129, 129, 0.4);
+    --hl-search: rgba(253, 115, 115, 0.4);
+    --hl-cursor: rgba(229, 149, 149, 0.37);
+    
+    --hvr: var(--text-highlight-bg);
+    --hvr2: var(--text-selection);
+
+    --tag: #c65656;
+    --table: #ccd6eb;
+    --hr: #d6deea;
+    --i-at: var(--headers)/*#804848*/;
+    
+    --graph-bg: var(--note);
+    --graph-lines: #e4e7f8;
+    --graph-node: var(--headers);
+    --graph-fill: var(--folder);
+    --graph-404: #727e93;
+    --graph-img: #4c78cc /*#5469de*/;
+    --graph-tag: #000000; 
+    --graph-focused: var(--text-highlight-bg-active);
+    
+    
+    /*CSS Specifics*/
+    --b-l-1: #683732;
+    --b-l-2: #ff1702;
+    --b-l-3: #e27777;
+    --b-l-4: #ff7482;
+    --b-l-5: #ad8f8f;
+    --b-l-6: #d6b6bc;
+
+    --sphd-pre-1: #bb5555;
+    --sphd-pre-2: #a53f3f;
+    --sphd-pre-3: #862c2c;
+    --sphd-pre-4: #662828;
+    --sphd-pre-5: #697795;
+    --sphd-pre-6: #8a92a3;
+    --sphd-ed-1: #bb5555;
+    --sphd-ed-2: #a53f3f;
+    --sphd-ed-3: #862c2c;
+    --sphd-ed-4: #662828;
+    --sphd-ed-5: #697795;
+    --sphd-ed-6: #8a92a3;
+
+    --em-pre-c: var(--text);
+    --em-ed-c: var(--text);
+    --b-pre-c: var(--text);
+    --b-ed-c: var(--text);
+    --del-pre-c: var(--text);
+    --del-ed-c: var(--text);
+}
+/* SECTION ------------------------------- Core Theme Colors END ------------------------------- */
+
+/* SECTION ------------------------------- Admonition Plugin START -------------------------------*/
+.markdown-preview-view .admonition{
+    margin: 15px 0px;
+    border-radius: 5px;
+    border: 1px solid var(--Neutral-Accent-1-Darkest);
+}
+
+.markdown-preview-view .admonition-content-holder > .admonition-content
+{
+    margin: 0px 10px 0px 10px;
+}
+
+.markdown-preview-view .admonition-content-holder > .admonition-content > p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+
+/* .markdown-preview-view .admonition-content-holder > .admonition-content > ul,
+.markdown-preview-view .admonition-content-holder > .admonition-content > ol,
+.markdown-preview-view .admonition-content-holder > .admonition-content [class*="language-"],
+.markdown-preview-view .admonition-content-holder > .admonition-content > blockquote, */
+.markdown-preview-view .admonition-content-holder > .admonition-content > div > .dataview,
+.markdown-preview-view .admonition-content-holder > .admonition-content > *{
+    margin: 0px 0px 5px 0px;
+}
+
+.markdown-preview-view .admonition-content-holder > .admonition-content [class*="language-"]{
+    padding: 6px 10px;
+}
+
+.markdown-preview-view .admonition-content-holder > .admonition-content [class*="language-"] > code{
+    padding: 0px
+}
+
+
+/* SECTION ------------------------------- Admonition Plugin END -------------------------------*/
+
+/* SECTION ------------------------------- Table START ------------------------------- */
+
+/* Table */
+.markdown-preview-view thead{
+    /* border: 2px solid var(--Seconday-Accent-1-Darkest); */
+}
+
+.markdown-preview-view tbody{
+    border: 2px solid var(--Seconday-Accent-1-Darkest);
+    /* border-bottom: 0px; */
+}
+
+.markdown-preview-view th,
+.reveal table th {
+    background-color: var(--th);
+    background: var(--Seconday-Accent-1-Darker);
+    color: var(--Pure-White-Accent-1);
+    border: 2px solid var(--Seconday-Accent-1-Darkest);
+}
+
+.markdown-preview-view th:nth-child(even),
+.reveal table th:nth-child(even) {
+    opacity: 80%;
+    border-left: 2px solid var(--Seconday-Accent-1-Darkest);
+    border-right: 2px solid var(--Seconday-Accent-1-Darkest);
+}
+
+.markdown-preview-view tr:nth-child(odd) td:nth-child(even),
+.reveal table tr:nth-child(odd) td:nth-child(even) {
+    background: var(--Neutral-Accent-1-Darken)
+}
+
+.markdown-preview-view tr:nth-child(even) td:nth-child(even),
+.reveal table tr:nth-child(even) td:nth-child(even) {
+    /* background: var(--Neutral-Accent-1-Darker-Darken); */
+}
+
+.markdown-preview-view tr:nth-child(even),
+.reveal table tr:nth-child(even) {
+    background-color: var(--Neutral-Accent-1-Darker);
+    /* opacity: 80%; */
+}
+
+.markdown-preview-view tr:nth-child(odd),
+.reveal table tr:nth-child(odd) {
+    background-color: var(--Neutral-Accent-1);
+}
+
+.markdown-preview-view tr:last-child > td,
+.reveal table tr:last-child > td {
+    border-bottom:green;
+}
+
+.markdown-preview-view td, .reveal table td{
+    border: 2px solid var(--Seconday-Accent-1-Darkest);
+    color: var(--White-Accent-1);
+    box-shadow: none;
+}
+
+.markdown-preview-view td:first-child, .reveal table td{
+    /* border-left: 1px solid var(--Neutral-Accent-1-Darkest);
+    border-right: 2px solid var(--Neutral-Accent-1-Darkest); */
+    /* border-image:linear-gradient(-155deg, #ffffff 0%,var(--Seconday-Accent-1-Darker) 100%) 10; */
+}
+
+.markdown-preview-view td:last-child, .reveal table td{
+    /* border-left: 2px solid var(--Neutral-Accent-1-Darkest);
+    border-right: 1px solid var(--Neutral-Accent-1-Darkest); */
+    /* border-image:linear-gradient(-155deg, #fffffff 0%,var(--Seconday-Accent-1-Darker) 100%) 10; */
+}
+
+.markdown-preview-sizer {
+    min-height: auto !important;
+}
+/* SECTION ------------------------------- Table END ------------------------------- */
+
+
+/* SECTION ------------------------------- Code Lines and Blocks START ------------------------------- */
+
+/* Preview Code Line */
+.markdown-preview-view p code, 
+.markdown-preview-view ol code, 
+.markdown-preview-view ul code, 
+.markdown-preview-view h1 code,
+.markdown-preview-view h2 code,
+.markdown-preview-view h3 code,
+.markdown-preview-view h4 code,
+.markdown-preview-view h5 code,
+.markdown-preview-view h6 code{
+    color: var(--Primary-Accent-1);
+    background: var(--Neutral-Accent-1);
+    border:1px solid var(--Neutral-Accent-1-Darkest);
+}
+
+/* Preview Code Block*/
+.theme-dark :not(pre) > code[class*="language-"], .theme-dark pre[class*="language-"] {
+    background: var(--Neutral-Accent-1-Dark);
+    border:1px solid var(--Neutral-Accent-1-Darkest);
+    border:none!important;
+}
+
+/* Preview Code Block CodeMirror NOTE: Breaks code view when not using CodeMirror Plugin*/
+.theme-dark pre > code[class*="language-"], .theme-dark pre[class*="language-"] {
+    background: var(--Neutral-Accent-1-Dark);
+    border:1px solid var(--Neutral-Accent-1-Darkest);
+    border:none;
+}
+
+/* Preview Code Block Active CodeMirror NOTE: Breaks code view when not using CodeMirror Plugin*/
+.theme-dark .workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content pre > code[class*="language-"] {
+    background: var(--Neutral-Accent-1);
+    border:1px solid var(--Neutral-Accent-1-Darkest);
+    border:none;
+}
+
+
+/* Preview Code Block Active*/
+ .theme-dark .workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content pre[class*="language-"] {
+    background: var(--Neutral-Accent-1);
+    border:1px solid var(--Neutral-Accent-1-Darkest);
+}
+
+/* Edit Code Block Mid*/
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+    background: var(--Neutral-Accent-1-Dark);
+    border-left:1px solid var(--Neutral-Accent-1-Darkest);
+    border-right:1px solid var(--Neutral-Accent-1-Darkest);
+}
+
+/* Edit Code Block Top */
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock-begin{
+    border-top: 1px solid var(--Neutral-Accent-1-Darkest);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Edit Code Block Bottom */
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock-end{
+    border-bottom: 1px solid var(--Neutral-Accent-1-Darkest);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+/* Edit Code Block Mid Active*/
+.workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content .cm-s-obsidian div.HyperMD-codeblock-bg{
+    background: var(--Neutral-Accent-1);
+}
+
+/* Edit Code Line */
+.cm-s-obsidian span.cm-inline-code, .cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight){
+    color: var(--Primary-Accent-1);
+    background: var(--Neutral-Accent-1);
+    border-top:1px solid var(--Neutral-Accent-1-Darkest);
+    border-bottom:1px solid var(--Neutral-Accent-1-Darkest);
+}
+
+/* Edit Code Line Left*/
+span .cm-formatting.cm-formatting-code.cm-inline-code:first-child{
+    border-left:1px solid var(--Neutral-Accent-1-Darkest);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Edit Code Line Right*/
+span .cm-formatting.cm-formatting-code.cm-inline-code:last-child{
+    border-right:1px solid var(--Neutral-Accent-1-Darkest);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Preview Code Color 1 */
+.theme-dark .token.atrule, .theme-dark .token.attr-value, .theme-dark .token.function, .theme-dark .token.class-name {
+    color: var(--Primary-Accent-1);
+}
+/* Preview Code Color 2 */
+.theme-dark .token.selector, .theme-dark .token.attr-name, .theme-dark .token.string, .theme-dark .token.char, .theme-dark .token.builtin, .theme-dark .token.inserted {
+    color: var(--Seconday-Accent-1);
+}
+/* Preview Code Color 3 */
+.theme-dark .token.keyword {
+    color: var(--Special-Accent-2);
+}
+/* Preview Code Color 4 */
+.theme-dark .token.punctuation {
+    color: var(--White-Accent-1);
+}
+/* Preview Code Color 5 */
+.theme-dark .token.parameter {
+    color: var(--Special-Accent-1-Lite);
+}
+/* Preview Code Color 6 */
+.theme-dark .token.boolean, .theme-dark .token.number {
+    color: var(--Special-Accent-4);
+}
+/* Preview Code Color 7 */
+.theme-dark .token.comment, .theme-dark .token.prolog, .theme-dark .token.doctype, .theme-dark .token.cdata {
+    color: var(--Neutral-Accent-3-Lite);
+}
+/* Preview Code Color 7 */
+.theme-dark .token.operator, .theme-dark .token.entity, .theme-dark .token.url, .theme-dark .language-css .token.string, .theme-dark .style .token.string, .theme-dark .token.variable {
+    color: var(--White-Accent-2);
+}
+
+/* Edit Code Color 1 */
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property, .theme-dark .cm-s-obsidian .cm-math.cm-property, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-property {
+    color: var(--Primary-Accent-1)!important;
+}
+
+.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable, .theme-dark .cm-s-obsidian span.cm-math.cm-variable, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable {
+    color: #D4D4D4;
+    color: var(--Primary-Accent-1)!important;
+}
+/* Edit Code Color 2 */
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string, .theme-dark .cm-s-obsidian .cm-math.cm-string, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-string {
+    color: var(--Seconday-Accent-1)!important;
+}
+/* Edit Code Color 3 */
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-keyword, .theme-dark .cm-s-obsidian .cm-math.cm-keyword, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-keyword {
+    color: var(--Special-Accent-2)!important;
+}
+/* Edit Code Color 4 */
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock {
+    color: var(--White-Accent-1)!important;
+}
+/* Edit Code Color 5 */
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-def, .theme-dark .cm-s-obsidian .cm-math.cm-def, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-def {
+    color: var(--Special-Accent-1-Lite)!important;
+}
+
+/* Edit Code Color 6 */
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-atom, .theme-dark .cm-s-obsidian .cm-math.cm-atom, .theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-atom {
+    color: var(--Special-Accent-4)!important;
+}
+
+/* Edit Code Color 7 */
+
+
+/* Edit Code Color 8 */
+
+
+/* NOTE Preview Mode Code Mirror Plugin  */
+/* Preview Code Block */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre[class*="language-"] {
+    background: var(--Neutral-Accent-1-Dark)!important;
+}
+
+/* Preview Code Block Active*/
+body.fallback-highlighting[class*="theme-"] .workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content .markdown-preview-view pre[class*="language-"] {
+    background: var(--Neutral-Accent-1)!important;
+}
+
+/* Edit Code Block */
+body.unified-cm-highlighting[class*="theme-"] .CodeView, body.unified-cm-highlighting[class*="theme-"] .CodeView .cm-s-obsidian, body.unified-cm-highlighting[class*="theme-"] .CodeView .cm-s-obsidian .CodeMirror-gutter, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian div.HyperMD-codeblock-bg, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-linebackground, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .cm-math.CodeMirror-linebackground, body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre.cm-s-obsidian[class*="language-"], body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre.cm-s-obsidian[class*="language-"] code {
+    background: var(--Neutral-Accent-1-Dark)!important;
+    /* background: var(--Neutral-Accent-1-Dark); */
+    /* border-left:1px solid var(--Neutral-Accent-1-Darkest)!important;
+    border-right:1px solid var(--Neutral-Accent-1-Darkest)!important; */
+}
+
+/* Edit Code Block Top Border*/
+body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian pre.HyperMD-codeblock-begin{
+    border-top: 1px solid var(--Neutral-Accent-1-Darkest)!important;
+    border-top-left-radius: 4px!important;
+    border-top-right-radius: 4px!important;    
+}
+
+/* Edit Code Block Bottom Border*/
+body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian pre.HyperMD-codeblock-end{
+    border-bottom: 1px solid var(--Neutral-Accent-1-Darkest)!important;
+    border-bottom-left-radius: 4px!important;
+    border-bottom-right-radius: 4px!important;    
+}
+
+/* Edit Code Block Active*/
+body.unified-cm-highlighting[class*="theme-"] .workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content .cm-s-obsidian pre.HyperMD-codeblock{
+    /* background: var(--Neutral-Accent-1)!important; */
+    border-left:1px solid var(--Neutral-Accent-1-Darkest)!important;
+    border-right:1px solid var(--Neutral-Accent-1-Darkest)!important;
+}
+
+/* Edit Code Block Active Top Border*/
+body.unified-cm-highlighting[class*="theme-"] .workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content .cm-s-obsidian pre.HyperMD-codeblock-begin{
+    border-top: 1px solid var(--Neutral-Accent-1-Darkest)!important;
+    border-top-left-radius: 4px!important;
+    border-top-right-radius: 4px!important;    
+}
+
+/* Edit Code Block Active Bottom Border*/
+body.unified-cm-highlighting[class*="theme-"] .workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content .cm-s-obsidian pre.HyperMD-codeblock-end{
+    border-bottom: 1px solid var(--Neutral-Accent-1-Darkest)!important;
+    border-bottom-left-radius: 4px!important;
+    border-bottom-right-radius: 4px!important;    
+}
+
+/* Edit Code Block Slected Line Color When Page Not Active */
+html body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .HyperMD-codeblock-bg.CodeMirror-activeline-background{
+    background: var(--Neutral-Accent-1-Dark)!important;
+}
+
+
+/* Preview Code Color 1 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.function {
+    color: var(--Primary-Accent-1)!important;
+}
+/* Preview Code Color 2 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.string {
+    color: var(--Seconday-Accent-1)!important;
+}
+/* Preview Code Color 3 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.keyword {
+    color: var(--Special-Accent-2)!important;
+}
+/* Preview Code Color 4 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.punctuation , body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code{
+    color: var(--White-Accent-1)!important;
+}
+/* Preview Code Color 5 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.parameter {
+    color: var(--Special-Accent-1-Lite)!important;
+}
+/* Preview Code Color 6 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.number {
+    color: var(--Special-Accent-4)!important;
+}
+/* Preview Code Color 7 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code * {
+    color: var(--Neutral-Accent-3-Lite)!important;
+}
+/* Preview Code Color 8 */
+body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre code span.class-name {
+    color: var(--Special-Accent-1-Lite)!important;
+}
+
+/* NOTE Edit Mode Code Mirror Plugin */
+
+/* Edit Code Color 1 */
+body.unified-cm-highlighting[class*="theme-"] .CodeView .cm-s-obsidian .CodeMirror-lines .cm-number, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .cm-hmd-frontmatter.cm-number, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .cm-math.cm-number, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian pre.HyperMD-codeblock .cm-number, body.fallback-highlighting[class*="theme-"] .markdown-preview-view pre.cm-s-obsidian .cm-number {
+    color: var(--Special-Accent-4)!important;
+}
+
+
+body.unified-cm-highlighting[class*="theme-"] .CodeView .cm-s-obsidian .CodeMirror-lines .CodeMirror-activeline-background, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-activeline-background, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .cm-math.CodeMirror-activeline-background, body.unified-cm-highlighting[class*="theme-"] .cm-s-obsidian .HyperMD-codeblock-bg.CodeMirror-activeline-background, body.unified-cm-highlighting[class*="theme-"] .markdown-preview-view pre.cm-s-obsidian .CodeMirror-activeline-background {
+    background: var(--Neutral-Accent-1)!important;
+}
+
+/* NOTE Applied if CodeMirror Plugin has style active selection on */
+.CodeMirror-selectedtext{
+    /* padding: 2px; */
+    /* border-top: 2px solid var(--text-selection-border);
+    border-bottom: 3px solid var(--text-selection-border); */
+    background: var(--text-selection);
+}
+
+/* CodeMirror Copy Button */
+button.copy-code-button{
+    border-bottom-left-radius: 5px;
+    border: 1px solid var(--Primary-Accent-1);
+    color: var(--White-Accent-1);
+    background: var(--Seconday-Accent-1-Darker);
+}
+
+button.copy-code-button:hover{
+    background: var(--Seconday-Accent-1-Darkest-Lighten);
+}
+
+@media (max-width: 500px) {
+    button.copy-code-button{
+        margin-top: 0px;
+        width: initial;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    button.copy-code-button:hover{
+        background: var(--Seconday-Accent-1-Darkest-Lighten);
+    }
+}
+
+
+
+/* SECTION ------------------------------- Code Lines and Blocks END ------------------------------- */
+
+/* SECTION ------------------------------- Blockquote START------------------------------- */
+/*--Blockquote--*/
+.markdown-preview-view blockquote {
+    display: flow-root;
+    border: 1px solid var(--bg);
+    border-left-width: 8px;
+    border-top-width: 0px;
+    background-color: var(--embed-bg);
+    border-image:linear-gradient(-155deg, #ffffff00 50%,var(--Seconday-Accent-1-Darker) 100%) 1;
+    border-radius: var(--radius);
+    position: relative;
+    margin: 1em;
+    padding-right: 40px; /*Don't overlap with "*/
+}
+/* SECTION ------------------------------- Blockquote END------------------------------- */
+
+/* SECTION ------------------------------- Settings Modal START------------------------------- */
+.clickable-icon {
+    color: var(--White-Accent-1);
+}
+
+.clickable-icon:hover {
+    color: var(--Primary-Accent-1);
+}
+
+.modal.mod-settings {
+    /* width: 55vw; */
+    height: 90vh;
+    overflow: visible;
+}
+.modal.mod-settings .vertical-tab-content-container,
+.modal.mod-settings .vertical-tab-header {
+    height: 90vh;
+}
+
+/* Btn + Toggle Btn On*/
+button.mod-cta, .checkbox-container.is-enabled {
+    background-color: var(--interactive-accent);
+    color: var(--interactive-text-on-accent);
+}
+
+button.mod-cta:hover, .checkbox-container.is-enabled:hover {
+    background-color: var(--Primary-Accent-1-Liter);
+}
+
+/* Toggle Btn Off*/
+.checkbox-container{
+    
+}
+
+.setting-item {
+    border-top: 1px solid var(--background-modifier-border);
+    border-image:linear-gradient(90deg, var(--Pure-White-Accent-1) 1%, var(--Seconday-Accent-1-Darker) 5%, 60%,var(--Transparent-Accent-1) 95%, var(--Transparent-Accent-1) 100%) 1;
+}
+
+.dropdown {
+    background-color: var(--embed-bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 128 128'%3E%3Cpath d='M64 115.58c-1.01 0-1.96-.51-2.5-1.37L.69 19.58C.1 18.67.06 17.5.58 16.55A2.96 2.96 0 0 1 3.19 15h121.62c1.09 0 2.09.59 2.61 1.55c.52.95.48 2.12-.11 3.03L66.5 114.22c-.54.85-1.49 1.36-2.5 1.36z' fill='%23d6ba7c'/%3E%3C/svg%3E");
+    border-radius: var(--radius);
+    border: 1px solid var(--table);
+    font-size: var(--f-text);
+    font-family: var(--default-font);
+}
+/* SECTION ------------------------------- Settings Modal END------------------------------- */
+
+
+
+/* SECTION ------------------------------- Misc START ------------------------------- */
+
+.markdown-preview-view hr{
+    border-top: 3px solid;
+    border-color: var(--background-modifier-border);
+    margin: 5px 0px;
+}
+
+.titlebar {
+    background-color: var(--background-modifier-cover);
+    /* border-top: 1px solid var(--Neutral-Accent-1-Dark);
+    border-left: 1px solid var(--Neutral-Accent-1-Dark);
+    border-image: linear-gradient(90deg, var(--Neutral-Accent-1) 0%, var(--Neutral-Accent-1) 50%, var(--Transparent-Accent-1) 100%) 10; */
+}
+
+.workspace-ribbon.side-dock-ribbon.mod-left{
+    /* border-left: 1px solid var(--background-modifier-cover);
+    border-right: 0px;
+    border-image: linear-gradient(180deg, var(--Neutral-Accent-1) 0%, var(--Neutral-Accent-1) 50%, var(--Transparent-Accent-1) 100%) 10; */
+}
+/* SECTION ------------------------------- Misc END ------------------------------- */
+
+/* SECTION ------------------------------- Modals START -------------------------------*/
+.modal-bg {
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(1px);
+}
+/* SECTION ------------------------------- Modals END -------------------------------*/
+
+
+
+/* SECTION ------------------------------- Icons START------------------------------- */
+/*File: Move Further In*/
+.nav-file-icon {
+    /* top: 5px; */
+    display: none;
+}
+/* SECTION ------------------------------- Icons END ------------------------------- */
+
+/* SECTION ------------------------------- Input Fields/Search and Repalce START ------------------------------- */
+/* Search and Replace Buttons */
+.document-search-buttons .document-search-button, .document-replace-buttons .document-search-button{
+    background: var(--Neutral-Accent-1-Lite);
+    color: var(--Neutral-Accent-2);
+    border-radius: 0px;
+    border: 1px solid var(--Neutral-Accent-1);
+}
+
+.document-search-buttons .document-search-button:hover, .document-replace-buttons .document-search-button:hover{
+    background: var(--Neutral-Accent-1);
+    color: var(--White-Accent-1);
+}
+
+/* Buttons of active page  */
+.workspace-leaf.mod-active .document-search-buttons .document-search-button, .workspace-leaf.mod-active .document-replace-buttons .document-search-button{
+    color: var(--White-Accent-1);
+}
+
+
+
+/* Input Fields */
+input[type='text'], input[type='search'], input[type='email'], input[type='password'], input[type='number']{
+    font-family: 'Inter', sans-serif;
+    /* font-family: "Lora", "Courier Prime", "Fira Code", "monospace"; */
+    /* background: var(--Neutral-Accent-1-Lighten); */
+    background: var(--Seconday-Accent-1-Darkest);
+    border:1px solid red;
+    border-image: linear-gradient(225deg, var(--Seconday-Accent-1-Dark) 0%, var(--Seconday-Accent-1-Dark) 50%, var(--Transparent-Accent-1) 100%) 10;
+    border-radius: 0px;
+}
+
+/* Active Input Fields */
+.workspace-leaf.mod-active .view-content input[type='text'],
+.workspace-leaf.mod-active .view-content input[type='search'],
+.workspace-leaf.mod-active .view-content input[type='email'],
+.workspace-leaf.mod-active .view-content input[type='password'],
+.workspace-leaf.mod-active .view-content input[type='number']
+{
+    border-image: linear-gradient(225deg, var(--Primary-Accent-1) 0%, var(--Primary-Accent-1) 50%, var(--Pure-White-Accent-1) 100%) 10;
+}
+
+/* Input Fields on hover*/
+input[type='text']:hover, input[type='search']:hover, input[type='email']:hover, input[type='password']:hover, input[type='number']:hover{
+    background: var(--Neutral-Accent-1);
+}
+
+
+/* NOTE Edit mode search and repace fields when match found Inactive Page*/
+input.document-search-input, input.document-replace-input {
+    background: var(--Neutral-Accent-1-Lite);
+    box-shadow: inset 5px 0px 0px 0px var(--Transparent-Accent-1);
+}
+/* NOTE Edit mode search and repace fields when match found Active Page*/
+.workspace-leaf.mod-active .view-content input.document-search-input, input.document-replace-input{
+    box-shadow: inset 5px 0px 0px 0px var(--Pure-White-Accent-1);
+}
+/* On hover */
+input.document-search-input:hover, input.document-replace-input:hover {
+    background: var(--Neutral-Accent-1);
+}
+
+/* NOTE Edit mode search and repace fields when match not found Inactive Page*/
+input.document-search-input.mod-no-match, input.document-replace-input.mod-no-match {
+    background: var(--Neutral-Accent-1-Lite);
+    box-shadow: inset 5px 0px 0px 0px var(--Transparent-Accent-1);
+}
+/* NOTE Edit mode search and repace fields when match not found Active Page*/
+.workspace-leaf.mod-active input.document-search-input.mod-no-match, .workspace-leaf.mod-active input.document-replace-input.mod-no-match {
+    box-shadow: inset 5px 0px 0px 0px var(--Seconday-Accent-1-Dark);
+}
+/* On hover */
+input.document-search-input.mod-no-match:hover, input.document-replace-input.mod-no-match:hover {
+    background: var(--Neutral-Accent-1);
+}
+
+/* Edit mode Replace field*/
+.document-replace > input.document-replace-input{
+    box-shadow: inset 5px 0px 0px 0px var(--Transparent-Accent-1);
+}
+
+/* Search Highlight Color */
+.cm-s-obsidian span.obsidian-search-match-highlight {
+    color: var(--Pure-White-Accent-1);
+    background-color: var(--text-highlight-bg);
+}
+
+/* SECTION ------------------------------- Input Fields/Search and Repalce END ------------------------------- */
+
+/* SECTION ------------------------------- Page Styles START ------------------------------- */
+.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content{
+    box-shadow:inset 0px 0px 15px 8px var(--Neutral-Accent-1-Darker);
+    border-top: 2px solid var(--Primary-Accent-1);
+    border-bottom: 6px solid var(--Pure-White-Accent-1);
+    background-color: var(--Neutral-Accent-1-Lighten);
+}
+
+/* Active Page Style */
+.workspace-split.mod-vertical :not(:last-child) .workspace-leaf.mod-active .view-content{
+    box-shadow:inset 0px 0px 15px 8px var(--Neutral-Accent-1-Darker);
+    border-top: 2px solid var(--Primary-Accent-1);
+    border-bottom: 6px solid var(--Pure-White-Accent-1);
+    background-color: var(--Neutral-Accent-1-Lighten);
+}
+
+/* Active Page Style For Last Row Of Pages*/
+.workspace-split .workspace-leaf.mod-active .view-content{
+    box-shadow:inset 0px 0px 15px 8px var(--Neutral-Accent-1-Darker);
+    border-top: 2px solid var(--Primary-Accent-1);
+    border-bottom: 2px solid var(--Pure-White-Accent-1);
+    background-color: var(--Neutral-Accent-1-Lighten);
+}
+
+/* Active Page Gutter When In Edit Mode */
+.workspace-split.mod-vertical .workspace-leaf.mod-active .view-content .CodeMirror-gutter.CodeMirror-linenumbers, .workspace-split.mod-vertical .workspace-leaf.mod-active .view-content .CodeMirror-gutter.CodeMirror-foldgutter{
+    /* box-shadow:inset 0px 0px 15px 8px var(--Neutral-Accent-1-Darker); */
+    background-color: var(--Transparent-Accent-1);
+}
+
+/* .CodeMirror-gutter.CodeMirror-linenumbers, .CodeMirror-gutter.CodeMirror-foldgutter{
+    background: red;
+} */
+
+/* Page Style*/
+.workspace-split .workspace-leaf .view-content{
+    /* background-color: red; */
+	/* background-color: var(--Neutral-Accent-1-Darker); */
+	/* background-image:linear-gradient(60deg, var(--Seconday-Accent-2) 0%, var(--Neutral-Accent-1) 25%, var(--Neutral-Accent-1) 75%, var(--Seconday-Accent-1) 100%); */
+    /* box-shadow:inset 0px 0px 15px 8px var(--Neutral-Accent-1-Darker); */
+    /* border-top: 2px solid var(--Primary-Accent-1);
+    border-bottom: 2px solid var(--Pure-White-Accent-1); */
+}
+/* SECTION ------------------------------- Page Styles END ------------------------------- */
+
+
+
+
+/* SECTION ------------------------------- Graph Settings START ------------------------------- */
+.graph-view.color-fill-focused {
+    color: var(--text-accent);
+}
+
+.graph-view.color-fill {
+    /* color: #ad3939; */
+}
+
+.graph-view.color-line {
+    color: var(--Seconday-Accent-1);
+}
+/* SECTION ------------------------------- Graph Settings END ------------------------------- */
+
+
+/* SECTION ------------------------------- Outliner END ------------------------------- */
+
+/* SECTION ------------------------------- Checkboxes START -------------------------------*/
+.markdown-preview-view ul.contains-task-list > li.task-list-item{
+    /* border-left: 0px; */
+    /* margin-right: 25px; */
+    /* padding-left: 25px; */
+    /* padding-left: 5px; */
+    
+}
+
+.markdown-preview-view ul.contains-task-list{
+    /* margin-left: -15px; */
+}
+
+/* Dropdown For Checkbox */
+.markdown-preview-view ul.contains-task-list > li.task-list-item > .list-collapse-indicator.collapse-indicator.collapse-icon > svg.right-triangle{
+    margin-left: -8px;
+}
+
+/* Unchecked */
+.markdown-preview-view .task-list-item-checkbox{
+    -webkit-appearance: none;
+    top: 3px !important;
+    position: relative;
+    width: 1.30em;
+    height: 1.30em;
+    margin: 1px;
+    /* box-shadow: inset 0px 0px 0px 10px var(--Seconday-Accent-1); */
+    /* box-shadow: inset 0px 0px 0px 1px var(--Seconday-Accent-1); */
+    
+    
+    border: 2px solid var(--Seconday-Accent-1-Dark);
+    border-radius: 2px;
+    filter: hue-rotate(0deg);
+    border-image:linear-gradient(45deg, #ffffff00 ,var(--Seconday-Accent-1-Dark)) 1;
+
+    left: -10px;
+
+    cursor: pointer;
+}
+
+/* Checked */
+.markdown-preview-view .task-list-item.is-checked > .task-list-item-checkbox{
+    -webkit-appearance: none;
+    top: 3px !important;
+    position: relative;
+    width: 1.30em;
+    height: 1.30em;
+    margin: 1px;
+    /* box-shadow: inset 0px 0px 0px 1px var(--Seconday-Accent-1); */
+    background-color: var(--Primary-Accent-1);
+    background: linear-gradient(0deg, #ffffff 0%, var(--Primary-Accent-1) 55%, var(--Primary-Accent-1) 100%);
+    background:linear-gradient(45deg, #ffffff,var(--Primary-Accent-1));
+    border: 2px solid var(--Seconday-Accent-1-Dark);
+    border-right: 2px solid var(--Seconday-Accent-1-Dark);
+    border-radius: 2px;
+    filter: hue-rotate(0deg);
+    border-image:linear-gradient(45deg,var(--Pure-White-Accent-1),var(--Seconday-Accent-1-Dark)) 1;
+}
+
+/* Checked Text Style NOTE: Requires Style Settings Plugin*/
+.checkListStrikeout .markdown-preview-view ul > li.task-list-item.is-checked{
+    text-decoration: none;
+    color: var(--White-Accent-1);
+}
+
+/* Checked Icon */
+.markdown-preview-view .task-list-item-checkbox:checked::before {
+    content: '✓';
+    content: 'X';
+    position: absolute;
+    color: var(--Neutral-Accent-1-Lite);
+    /* font-family: 'unset'; */
+    font-size: 1.00em;
+    line-height: 1.25em;
+    font-weight: 900;
+    width: 1.2em;
+    text-align: center;
+    left: -2px;
+    top: -2px;
+    padding: 1px
+    /* text-shadow: 1px0 10px 11.5em var(--accent-2); */
+}
+/* SECTION ------------------------------- Checkboxes END -------------------------------*/
+
+/* SECTION ------------------------------- Side Dock AND Ribbon START-------------------------------*/
+
+/* Page Vault Title*/
+.nav-folder.mod-root > .nav-folder-title{
+
+    border-left: 5px solid var(--Neutral-Accent-1-Darkest);
+    border-top: 5px solid var(--Primary-Accent-1);
+    border-right: 5px solid var(--Primary-Accent-1);
+    border-bottom: 5px solid var(--Primary-Accent-1);
+
+
+    box-shadow: inset 0px 15px 0px 22px var(--Neutral-Accent-1-Darkest);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: linear-gradient(90deg, #ffffff 0%, var(--Primary-Accent-1) 55%, var(--Primary-Accent-1) 100%);
+    justify-content: center;
+    color: #ffffff;
+
+
+    /* animation-name: text-shadow_color_change_V2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    padding: 10px 0px;
+    position: relative;
+}
+
+.side-dock-ribbon-tab:hover, .side-dock-ribbon-action:hover {
+    color: var(--Primary-Accent-1);
+}
+
+.workspace-tab-header:hover {
+    color: var(--Primary-Accent-1);
+}
+
+.workspace-tab-header.is-active:hover {
+    color: var(--Primary-Accent-1);
+}
+
+.workspace-tab-header[aria-label="Starred"] {
+    color: var(--Primary-Accent-1);
+}
+
+.workspace-tab-header[aria-label="Starred"]:hover {
+    color: var(--White-Accent-1);
+}
+
+/* Nav Folder/File Icons */
+.nav-folder-children .nav-folder-title-content::before,
+.nav-file-title .nav-file-title-content::before {
+    font-family: 'its';
+    margin-right: 6px;
+    vertical-align: top;
+    font-size: 13px;
+    font-weight: 10 !important;
+}
+
+/* Folder Icon */
+.nav-folder-children .nav-folder-title-content::before {
+    content: '\e801';
+    color: var(--folder);
+}
+
+/* File Icon */
+.nav-file-title > .nav-file-title-content::before {
+    content: '\e800';
+    text-align: center;
+    color: var(--file);
+}
+
+/* File Icon Hover */
+.nav-file-title:hover > .nav-file-title-content::before {
+    color: var(--White-Accent-1);
+}
+
+/*Inactive Folder*/
+.nav-folder.is-collapsed .nav-folder-title-content:before {
+    color: var(--Seconday-Accent-1-Dark);
+}
+
+/* Active Folder */
+.nav-folder .nav-folder-title-content::before{
+    /* color: var(--Seconday-Accent-1-Lite); */
+}
+
+/* Folder Hover */
+.nav-folder.is-collapsed > .nav-folder-title:hover > .nav-folder-title-content::before, .nav-folder > .nav-folder-title:hover > .nav-folder-title-content::before {
+    color: var(--Seconday-Accent-1-Lite);
+}
+
+/* Is Being Renamed */
+.nav-folder .nav-folder-title-content.is-being-renamed::before, .nav-file-title > .nav-file-title-content.is-being-renamed::before{
+    color: var(--Pure-White-Accent-1);
+}
+
+
+/*Nav Folder Lines*/
+.nav-folder,
+.nav-file {
+    margin: 0 -2px;
+    margin-right: 0px;
+    border-left: 2px solid var(--table);
+}
+/*Align Folder Line*/
+.nav-folder-children {
+    padding-left: 18px;
+}
+
+/*Nav Hover Line Colors*/
+.nav-folder:hover,
+.nav-file:hover {
+    border-color: var(--accent);
+}
+
+
+
+/* SECTION ------------------------------- Side Dock AND Ribbon END ------------------------------- */
+
+
+/* SECTION ------------------------------- Dropdowns START ------------------------------- */
+
+li .list-collapse-indicator.collapse-indicator.collapse-icon > svg.right-triangle{
+    margin-left: 5px;
+    margin-top: -4px;
+}
+  
+
+
+/* SECTION ------------------------------- Dropdowns END ------------------------------- */
+/* SECTION ------------------------------- Links AND Tags START ------------------------------- */
+.internal-link{
+    border: 1px solid var(--text-a);
+    border-radius: 5px;
+    padding: 2px 4px;
+    background: var(--Seconday-Accent-1-Darker);
+    /* border: 1px solid var(--Seconday-Accent-1-Darkest); */
+    box-shadow: inset 0px 0px 0px 1px var(--Seconday-Accent-1-Darkest);
+    text-decoration: none!important;
+    font-size: .95em;
+
+    background: var(--Seconday-Accent-1-Darkest);
+    box-shadow: inset 0px 0px 0px 1px var(--White-Accent-1);
+    color: var(--White-Accent-1);    
+}
+
+.internal-link:hover{
+    /* background: linear-gradient(to right, red, orange); */
+    color: #ffffff !important;
+    animation-name: text-shadow_color_change_V2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Cuttoff Long Page Links TODO Currently link is slightly lower then center when in this mode*/
+a.internal-link{
+    padding: 0px 4px;
+    display: inline-block;
+    vertical-align: sub;
+    vertical-align: text-top;
+    line-height: 1.5;
+    /* line-height: 1.2; */
+    height: 21px;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a.tag{
+    color: var(--Primary-Accent-1);
+    border: 1px solid var(--text-a);
+    border-radius: 5px;
+    padding: 2px 4px;
+    background: var(--Neutral-Accent-1);
+    box-shadow: inset 0px 0px 0px 1px var(--Primary-Accent-1);
+    text-decoration: none;
+    font-size: .95em;
+}
+
+a.tag:hover{
+    color: #ffffff !important;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #e60073, 0 0 8px #e60073, 0 0 10px #e60073, 0 0 12px #e60073, 0 0 14px #e60073;
+    animation-name: text-shadow_color_change_V3;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+  
+@-webkit-keyframes text-shadow_color_change {
+    0%   {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #e60073, 0 0 8px #e60073, 0 0 10px #e60073, 0 0 12px #e60073, 0 0 14px #e60073;}
+    100%  {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #db4a93, 0 0 8px #db4a93, 0 0 10px #db4a93, 0 0 12px #db4a93, 0 0 14px #db4a93;}
+}
+
+@-webkit-keyframes text-shadow_color_change_V2 {
+    0%   {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--White-Accent-2), 0 0 8px var(--White-Accent-2), 0 0 10px var(--White-Accent-2), 0 0 12px var(--White-Accent-2), 0 0 14px var(--White-Accent-2);}
+    100%  {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--Primary-Accent-1), 0 0 8px var(--Primary-Accent-1), 0 0 10px var(--Primary-Accent-1), 0 0 12px var(--Primary-Accent-1), 0 0 14px var(--Primary-Accent-1);}
+}
+
+@-webkit-keyframes text-shadow_color_change_V3 {
+    0%   {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--White-Accent-2), 0 0 8px var(--White-Accent-2), 0 0 10px var(--White-Accent-2), 0 0 12px var(--White-Accent-2), 0 0 14px var(--White-Accent-2);}
+    100%  {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--Primary-Accent-1), 0 0 8px var(--Primary-Accent-1), 0 0 10px var(--Primary-Accent-1), 0 0 12px var(--Primary-Accent-1), 0 0 14px var(--Primary-Accent-1);}
+}
+
+@-webkit-keyframes text-shadow_color_change_V4 {
+    0%   {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--Seconday-Accent-1), 0 0 8px var(--Seconday-Accent-1), 0 0 10px var(--Seconday-Accent-1), 0 0 12px var(--Seconday-Accent-1), 0 0 14px var(--Seconday-Accent-1);}
+    100%  {text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--Primary-Accent-1), 0 0 8px var(--Primary-Accent-1), 0 0 10px var(--Primary-Accent-1), 0 0 12px var(--Primary-Accent-1), 0 0 14px var(--Primary-Accent-1);}
+}
+
+/* SECTION ------------------------------- Links And Tags END ------------------------------- */
+/* SECTION -------------------------------Links Popover Preview START ------------------------------- */
+/* NOTE bigger link popup preview  */
+.popover.hover-popover {
+    transform:  scale(0.9);
+    max-height: 800px;
+    min-height: 300px;
+    width:      800px;
+    overflow:   auto;
+    padding:    0rem 2rem 2rem 2rem;
+}
+  
+.popover.hover-popover .markdown-embed {
+    height:     100%;
+}
+
+/* NOTE Hides the second limited scrollbar in popovers */
+.markdown-embed-content > div.markdown-preview-view{
+    overflow: visible;
+}
+/* SECTION -------------------------------Links Popover Preview END ------------------------------- */
+
+/* headings #标题*/
+.markdown-preview-view h1
+{
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-title-h1);
+}
+
+.markdown-preview-view h1:after
+{
+    content: "";
+    background: var(--text-title-h1);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 0%;
+}
+
+.markdown-preview-view h2
+{
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text-title-h2);
+}
+
+.markdown-preview-view h2:after
+{
+    content: "";
+    background: var(--text-title-h2);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 5%;
+}
+  
+.markdown-preview-view h3
+{
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--text-title-h3);
+}
+
+.markdown-preview-view h3:after
+{
+    content: "";
+    background: var(--text-title-h3);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 10%;
+}
+
+.markdown-preview-view h4
+{
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-title-h4);
+}
+
+.markdown-preview-view h4:after
+{
+    content: "";
+    background: var(--text-title-h4);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 15%;
+}
+
+.markdown-preview-view h5
+{
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-title-h5);
+}
+
+.markdown-preview-view h5:after
+{
+    content: "";
+    background: var(--text-title-h5);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 20%;
+}
+
+.markdown-preview-view h6
+{
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-title-h6);
+}
+
+.markdown-preview-view h6:after
+{
+    content: "";
+    background: var(--text-title-h6);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 25%;
+}
+  
+  
+/* headings #标题*/
+.cm-header-1
+{
+    font-family: var(--font-family-editor);
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-title-h1);
+}
+
+.cm-header-2
+{
+    font-family: var(--font-family-editor);
+    font-weight: 500;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text-title-h2);
+}
+
+.cm-header-3
+{
+    font-family: var(--font-family-editor);
+    font-weight: 500;
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--text-title-h3);
+}
+
+.cm-header-4
+{
+    font-family: var(--font-family-editor);
+    font-weight: 500;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-title-h4);
+}
+
+.cm-header-5
+{
+    font-family: var(--font-family-editor);
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-title-h5);
+}
+
+.cm-header-6
+{
+    font-family: var(--font-family-editor);
+    font-weight: 500;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-title-h6);
+}
+
+/* SECTION ------------------------------- Page TitleBar START ---------------------------------------------------- */
+.view-header-icon{
+    /* color: var(--Primary-Accent-1); */
+}
+
+.view-header-icon:hover{
+    color: var(--Primary-Accent-1);
+}
+
+/*Inactive Page Titlebar*/
+.view-header-title,
+.view-header-icon,
+.view-action {
+    /* color: var(--inactive); */
+}
+
+/*Active Page Titlebar*/
+.workspace-leaf.mod-active .view-header-title,
+.workspace-leaf.mod-active .view-header-icon,
+.workspace-leaf.mod-active .view-action {
+    /* color: var(--soft-text); */
+}
+
+
+/* SECTION ------------------------------- Page TitleBar END ------------------------------- */
+
+
+/* Sliding Panes should not be shown on devices of 500px or less. */
+@media (min-width: 500px) {
+
+/* SECTION ------------------------------- Sliding Panes Start ------------------------------- */
+/* everything under .mod-root now. Don't want Andy messing with sidebars */
+/* also, Andy only makes sense for vertical splits, at the root level, right? */
+.mod-root.workspace-split.mod-vertical {
+    overflow-x:auto;
+    --header-width: 36px; /* <- 36px is the header height in the default theme */
+}
+
+.stackedPanes .mod-root.workspace-split.mod-vertical > div {
+    min-width: calc(700px + var(--header-width)); /* <-- 700px is the default theme's "readable" max-width */
+    box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.25);
+    position:sticky;
+    left:0;
+}
+
+/* shift sticky position, so titles will stack up to the left */
+/* This will currently stack to a maximum of 10 before resetting */
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-8) { left: calc(var(--header-width) * 0); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-7) { left: calc(var(--header-width) * 1); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-6) { left: calc(var(--header-width) * 2); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-5) { left: calc(var(--header-width) * 3); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-4) { left: calc(var(--header-width) * 4); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-3) { left: calc(var(--header-width) * 5); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-2) { left: calc(var(--header-width) * 6); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n-1) { left: calc(var(--header-width) * 7); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n+0) { left: calc(var(--header-width) * 8); }
+.stackedPanes .mod-root.workspace-split.mod-vertical > div:nth-child(10n+1) { left: calc(var(--header-width) * 9); }
+
+
+/* SECTION ------------------------------- MatteCrystal's More Page Layouts And Other Fixes START -------------------------------*/
+/* NOTE Allows you to split the screen horizontally and still stack pages on each level */
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div {
+    min-width: calc(var(--Minimum-Page-Width) + var(--header-width));
+    box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.25);
+    position:sticky;
+    left:0;
+}
+
+/* NOTE Allows you to split the screen horizontally and still stack pages on each level */
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-8) { left: calc(var(--header-width) * 0); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-7) { left: calc(var(--header-width) * 1); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-6) { left: calc(var(--header-width) * 2); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-5) { left: calc(var(--header-width) * 3); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-4) { left: calc(var(--header-width) * 4); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-3) { left: calc(var(--header-width) * 5); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-2) { left: calc(var(--header-width) * 6); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n-1) { left: calc(var(--header-width) * 7); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n+0) { left: calc(var(--header-width) * 8); }
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > div:nth-child(10n+1) { left: calc(var(--header-width) * 9); }
+
+/* Fix No Scroll */
+.workspace-split.mod-vertical{
+    overflow: auto;
+}
+
+/* Force Minimum Page Width (Only works when stacking pages is off)  */
+.workspace-split.mod-vertical .workspace-leaf { 
+    min-width: var(--Minimum-Page-Width); 
+}
+
+/* Fix find and replace position when in preview mode*/
+.is-searching{
+    position: relative;
+}
+
+.mod-root .workspace-split.mod-horizontal{
+    
+}
+
+.stackedPanes .mod-root.workspace-split.mod-vertical .workspace-split.mod-horizontal .workspace-split.mod-vertical > .workspace-leaf-resize-handle{
+    /* width: calc((700px + var(--header-width)) * 20); */
+    /* right: 0!important; */
+}
+
+
+
+/* SECTION ------------------------------- MatteCrystal's More Page Layouts And Other Fixes END -------------------------------*/
+
+/* now it's time for the fancy vertical titles */
+
+/* first we'll add a bit of gap for the title to sit inside of */
+.workspace-leaf-content {
+    padding-left: var(--header-width);
+    position: relative;
+}
+
+/* this is where the magic happens */
+.view-header {
+    writing-mode: vertical-lr;
+    border-right: 1px solid var(--background-secondary-alt);
+    border-left: 2px solid var(--background-secondary-alt);
+    border-top: none;
+    border-bottom: none;
+    height: auto;
+    width: var(--header-width);
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+}
+
+/* Active Page Title */
+.workspace-leaf.mod-active .view-header {
+    /* border-image:linear-gradient(45deg,red,blue) 10; */
+    border-image: linear-gradient(225deg, var(--Primary-Accent-1) 0%, var(--Primary-Accent-1) 55%, var(--Pure-White-Accent-1) 100%) 10;
+    border-right: 2px solid var(--interactive-accent);
+    border-bottom: none;
+}
+
+/* Inactive Page Title */
+.workspace-leaf .view-header {
+    /* border-image:linear-gradient(45deg,red,blue) 10; */
+    border-image: linear-gradient(225deg, var(--Seconday-Accent-1-Darker) 0%, var(--Seconday-Accent-1-Darker) 55%, #ffffff00 100%) 10;
+    border-right: 2px solid var(--Seconday-Accent-1);
+    border-left: 0px;
+    border-bottom: none;
+}
+
+
+/* unset the title container height and swap padding */
+.view-header-title-container {
+    height: unset;
+    padding-left: unset;
+    padding-top: 5px;
+}
+
+/* fix the long-title-obscuring shadows */
+.view-header-title-container:after {
+    width: 100%;
+    height: 30px;
+    top:unset;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, var(--background-secondary));
+}
+.workspace-leaf.mod-active .view-header-title-container:after {
+    background: linear-gradient(to bottom, transparent, var(--background-primary-alt));
+}
+
+/* swap the padding/margin around for the header and actions icons */
+.view-header-icon, .view-actions {
+    padding: 10px 5px;
+}
+.view-action {
+    margin: 8px 0;
+}
+
+/* get rid of the gap left by the now-missing horizontal title */
+.view-content {
+    height: 100%;
+}
+
+/* make the fake drop target overlay have a background so you can see it. */
+/* TODO: figure out how the fake target overlay works so we can put the title back, too */
+.workspace-fake-target-overlay {
+    background-color: var(--background-primary);
+}
+
+/* Auto-collapsing sidebars courtesy @kmaasrud */
+
+.app-container.is-left-sidedock-collapsed .side-dock.mod-left:not(:hover), .app-container.is-right-sidedock-collapsed .side-dock.mod-right:not(:hover) {
+    width: 0px !important;
+}
+
+/* Naked Embeds */
+.markdown-embed-title { display:none; }
+.markdown-preview-view .markdown-embed { border:none; padding:0; margin:0; }
+.markdown-preview-view .markdown-embed-content { max-height: unset;}
+.markdown-preview-view .markdown-embed-content>:first-child { margin-top: 0; }
+.markdown-preview-view .markdown-embed-content>:last-child { margin-bottom: 0; }
+
+/* SECTION ------------------------------- Sliding Panes END ------------------------------- */
+
+}  
+
+/* NOTE This adds level indecators for bullets but causes glitchieness when linking panes*/
+/* SECTION ------------------------------- Level indicators for bullet list START -------------------------------*/
+/* .markdown-preview-view .cm-hmd-list-indent .cm-tab, ul ul { 
+    position: relative; 
+}
+.markdown-preview-view .cm-hmd-list-indent .cm-tab::before, ul ul::before {
+    content:'';
+    border-left: 2px solid rgba(0, 122, 255, 0.25);
+    border-left: 2px solid var(--interactive-accent);
+    position: absolute;
+}
+.markdown-preview-view .cm-hmd-list-indent .cm-tab::before { 
+    left: 0; 
+    top: -5px; 
+    bottom: -4px;
+}
+.markdown-preview-view ul ul::before { 
+    left: -15px;
+    top: -17px;
+    bottom: 0;
+} */
+/* SECTION ------------------------------- Level indicators for bullet list END -------------------------------*/
+
+
+/* SECTION ------------------------------- Outliner START --------------------------------------------------------------  */
+.outline {
+    margin: .2em .5em;
+    user-select: text;
+}
+.outline .tree-item-children {
+    margin-left: .7em;
+    border-left: 1px solid var(--lines);
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+}
+.outline .tree-item-children:hover {
+    border-color: var(--headers);
+    border-radius: var(--radius);
+}
+/* SECTION ------------------------------- Outliner END --------------------------------------------------------------  */
+
+
+
+
+
+
+
+
+
+
+/*--List--*/
+/*Colored List Markers*/
+li::marker, .cm-s-obsidian span.cm-formatting-list {
+    /* color: transparent; */
+}
+
+/*Lighten Numbered List Marker Color*/
+ol li::marker {
+    color: var(--headers);
+}
+
+/*Bullet Shape*/
+ul:nth-child(odd), ul:nth-child(even) {
+    list-style-type: "";
+}
+
+ul li::before {
+    content: var(--bullet);
+    font-family: var(--bul-f);
+    margin-left: -22px;
+    color: var(--accent);
+    position: relative; /*For Spaced Lists*/
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: var(--f-text);
+}
+ul li:nth-child(even)::before {
+    color: var(--accent2);
+}
+li.task-list-item::before,
+ol li::before {
+    visibility: collapse;
+}
+ol ul > li::before {
+    visibility: visible;
+}
+
+/*Smaller Indentation*/
+ul, ol { 
+    padding-inline-start: 25px;
+    /*margin-block-start: 0;*/
+}
+.markdown-preview-view ol > li.task-list-item {
+    padding-left: 10px;
+}
+/*Checkbox: Fix Spaced Checkboxes*/
+.markdown-preview-view ul li.task-list-item > p { text-indent: unset; }
+.markdown-preview-view ul > li.task-list-item {
+    padding-left: 10px;
+}
+/*Checkbox: Fix Tags On Space Checkbox*/
+.markdown-preview-view ul li.task-list-item > p > a { text-indent: 0px; }
+
+/*Fix breaking when Space in between Lists*/
+ul li.task-list-item > p {
+    margin-block-end: unset;
+}
+ul li > p {
+    margin-block-end: unset;
+}
+
+/*-Bullet Points-*/
+/*Editor Bullet Points*/
+.cm-s-obsidian span.cm-formatting-list-ul::before,
+.cm-s-obsidian span.cm-formatting-list-ol {
+    color: var(--soft-text);
+}
+
+.cm-s-obsidian span.cm-formatting-list-ul::before {
+    content: var(--bullet);
+    font-family: var(--bul-f);
+    margin-right: -10px;
+}
+
+/*Editor Bullet Lines*/
+.cm-hmd-list-indent .cm-tab {
+    position: relative;
+}
+.cm-hmd-list-indent .cm-tab::before {
+    content:'';
+    border-left: var(--b-line) solid var(--accent);
+    position: absolute;
+    left: 7px;
+    top: -5px;
+    bottom: -4px; 
+}
+
+.cm-s-obsidian .HyperMD-list-line {
+    padding-top: 0;
+}
+
+/*Preview Bullet Lines*/
+/*Bullet Line New*/
+li {
+    padding-left: 5px;
+    border-left: var(--b-line) solid var(--accent);
+    /* border-image:linear-gradient(-180deg, var(--Seconday-Accent-1-Darkest) 0%, var(--Seconday-Accent-1-Darkest) 5%, var(--Seconday-Accent-1-Darker) 50%, var(--Seconday-Accent-1-Darker) 100%) 1; */
+    line-height: var(--lh);
+}
+
+li:nth-child(even) {
+    border-left: var(--b-line) solid var(--accent2);
+    /* border-image:linear-gradient(-180deg, var(--Seconday-Accent-1-Darker) 0%, var(--Seconday-Accent-1-Darker) 5%, var(--accent2) 25%, var(--accent2) 75%, var(--Seconday-Accent-1-Darkest) 95%, var(--Seconday-Accent-1-Darkest) 100%) 1; */
+}
+
+li:nth-child(even):last-child {
+    border-left: var(--b-line) solid var(--accent2);
+    /* border-image:linear-gradient(-180deg, var(--Seconday-Accent-1-Darker) 0%, var(--Seconday-Accent-1-Darker) 5%, var(--accent2) 25%, var(--accent2) 75%, var(--accent2) 95%, var(--accent2) 100%) 1; */
+}
+
+/* SECTION ------------------------------- Gradient Bullet Points START -------------------------------*/
+.gradientBulletPointLines li {
+    border-image:linear-gradient(-180deg, var(--Seconday-Accent-1-Darkest) 0%, var(--Seconday-Accent-1-Darkest) 5%, var(--Seconday-Accent-1-Darker) 50%, var(--Seconday-Accent-1-Darker) 100%) 1;
+}
+
+.gradientBulletPointLines li:nth-child(even) {
+    border-image:linear-gradient(-180deg, var(--Seconday-Accent-1-Darker) 0%, var(--Seconday-Accent-1-Darker) 5%, var(--accent2) 25%, var(--accent2) 75%, var(--Seconday-Accent-1-Darkest) 95%, var(--Seconday-Accent-1-Darkest) 100%) 1;
+}
+
+.gradientBulletPointLines li:nth-child(even):last-child {
+    border-image:linear-gradient(-180deg, var(--Seconday-Accent-1-Darker) 0%, var(--Seconday-Accent-1-Darker) 5%, var(--accent2) 25%, var(--accent2) 75%, var(--accent2) 95%, var(--accent2) 100%) 1;
+}
+/* SECTION ------------------------------- Gradient Bullet Points END -------------------------------*/
+
+ul li:nth-child(even)::before {
+    color: var(--accent2);
+    /* color: var(--text); */
+}
+
+li:nth-child(even) {
+    border-left: var(--b-line) solid var(--accent2);
+    /* border-left: var(--b-line) solid var(--text); */
+}
+
+
+/* SECTION ------------------------------- Scrollbars START ------------------------------- */
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: var(--Neutral-Accent-3-Lite);
+    /* -webkit-border-radius: var(--radius); */
+}
+
+/* Scrollbar When Window Inactive */
+/* ::-webkit-scrollbar-thumb:window-inactive {
+    background: turquoise; 
+} */
+
+/* Currently Clicked Scrollbar */
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--Neutral-Accent-3-Lite);
+    /* -webkit-border-radius: var(--radius); */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background:var(--Neutral-Accent-3-Dark);    
+}
+
+/* Track When Clicking Scrollbar */
+/* ::-webkit-scrollbar-track:active {
+    background: green;    
+} */
+
+/* SECTION ------------------------------- Scrollbars End ------------------------------- */
+
+
+
+
+
+/* SECTION ------------------------------- CSS For Custom HTML Elements START ------------------------------- */
+.pageTitle{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-title-h1-alt);
+}
+
+.pageTitle.neutral::after{
+    background: var(--background-modifier-border);
+}
+
+.pageTitle::after{
+    content: "";
+    background: var(--text-title-h1-alt);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 0%;
+}
+
+.pageTitle.small{
+    text-align: left;
+    justify-content: left;
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: initial;
+    font-size: initial;
+    font-weight: bold;
+    color: var(--text-title-h1-alt);
+}
+
+.divider{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    font-family: var(--font-family-preview);
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--background-modifier-border);
+    margin: 13px 0px;
+}
+
+.divider::after{
+    content: "";
+    background: var(--background-modifier-border);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 0%;
+}
+/* SECTION ------------------------------- CSS For Custom HTML Elements END ------------------------------- */
