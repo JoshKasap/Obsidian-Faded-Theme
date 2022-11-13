@@ -71,7 +71,7 @@ settings:
         title: Minimum Page Width
         description: The minimum allowed width of a page
         type: variable-number-slider
-        default: 500
+        default: 700
         format: px
         min: 300
         max: 1920
@@ -1364,7 +1364,7 @@ body {
     --custom-highlight-bg-color: var(--custom-red-900);
 
     /* Text */
-    /* --text-on-accent: var(--black); */
+    --text-on-accent: var(--background-primary-active);
 
     /* Override Color Accent */
     --color-accent: var(--custom-gold-950);
@@ -1621,7 +1621,8 @@ select.dropdown option{
 
 /* NOTE Interactive Accent Button Style */
 button.mod-cta{
-    text-shadow: 1px 1px 3px var(--custom-black-500);
+    /* text-shadow: 1px 1px 3px var(--custom-black-500); */
+    color: var(--background-primary-active);
 }
 /* SECTION ------------------------------- Settings Modal END------------------------------- */
 
