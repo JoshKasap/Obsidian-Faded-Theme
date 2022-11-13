@@ -9,7 +9,8 @@ Faded Theme For Obsidian By Josh Kasap![](Images/Faded.png)
 ## Features 
 ### Advanced Sliding Panes
 Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidian. With the release of Obsidian 1.0 we now have native support for unstacked and stacked tabs. This is great but what if you could have unstacked tab panes that also stacked like sliding panes? Well that's what this theme does! ![](Images/AdvancedSlidingPanesLayouts.png)
-
+- **Obsidian Admonition/Callouts: **https://github.com/valentine195/obsidian-admonition
+	- ![](Images/Admonition.png)
 ### Custom HTML Snippets
 Faded ATM supports HTML snippets to help spice up your notes. 
 - `<div class="pageTitle">Your Text Here</div>` 
@@ -21,8 +22,8 @@ Faded ATM supports HTML snippets to help spice up your notes.
 - ![](Images/StyleSettings.png)
 - You can chose to make panes not stack, This gives you more screen space when many panes are open.
 -  You can modify the minimum page/pane width. This can be useful for people using obsidian at lower or higher resolutions. The default setting is made with 1440p screen in mind
--  You can enable bullet point gradient lines. This is off by default because it can make when a bullet begins and ends. But some may prefer the style. 
--  You can make it so checking items off a checklist won't cause the checked items text to be dimmed and crossed out.
+-  You can enable bullet point gradient lines. This is off by default because it can make it hard to tell when a bullet begins and ends. But some may prefer the style. 
+-  You can make it so checking items off a checklist won't cause the checked items text to be dimmed and crossed out. (This feature is Broken ATM)
 ## Supported Plugins
 Faded currently supports full or partial styling of the following plugins. 
 - **Style Settings Plugin: **https://github.com/mgmeyers/obsidian-style-settings
@@ -31,21 +32,6 @@ Faded currently supports full or partial styling of the following plugins.
 		- **Enable Edit Mode Syntax Highlighting Themes** *(recommended)*
 		- **Enable Preview Mode Syntax Highlighting Themes** *(recommended)*![](Images/CodeMirrorOptions.png)
 - **Copy Button For Code Blocks: **https://github.com/jdbrice/obsidian-code-block-copy
-- **Obsidian Admonition: **https://github.com/valentine195/obsidian-admonition
-	- ![](Images/Admonition.png)
-	- Use below codeblock as a reference to make my fancy custom Admonition
-	- 
-		``` ad-note
-		title: <div class="pageTitle small">Backlinks</div>
-		collapse: closed
-		icon: list
-		color: 
-
-		- [[BeamNG]]
-		- [[Fault - Game]]
-		- [[MineCraft]]
-		- [[Rocket League]]
-		```
 # Kudos
 - **SlRvb** and his ***ITS-Theme*** https://github.com/SlRvb/Obsidian--ITS-Theme It was a great reference and especially helped with getting the folder, page, and bullet point icons. It also was very helpful in getting the nested lines which can be seen in bullet points lists, the file navigation pane, and the outline pane. 
 - Andy for his initial sliding panes CSS
