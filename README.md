@@ -1,3 +1,5 @@
+# This Read Me Is Outdated (Update In Progress)
+
 # Obsidian-Faded-Theme
 Faded Theme For Obsidian By Josh Kasap![](Images/Faded.png)
 
