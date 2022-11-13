@@ -8,15 +8,13 @@ Faded Theme For Obsidian By Josh Kasap![](Images/Faded.png)
 - This theme makes use of the ***Style Settings Plugin*** https://github.com/mgmeyers/obsidian-style-settings It's encuraged to install this plugin in order to gain access various customizable options for this theme.
 ## Features 
 ### Advanced Sliding Panes
-Faded uses advanced CSS to further improve sliding panes in obsidian. Now panes will scroll infinitely off the page allowing to stack panes to you're hearts content. Advanced sliding panes also allow you to implement far more layouts without breaking. Namely you can now split the view horizontally however many times you like to make 2 or more rows. Each row has full support for infinite sliding panes. This allows you to nest sliding rows, inside sliding rows, inside sliding rows, however many times you feel is necessary. ![](Images/AdvancedSlidingPanesLayouts.png)
+Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidian. With the release of Obsidian 1.0 we now have native support for unstacked and stacked tabs. This is great but what if you could have unstacked tab panes that also stacked like sliding panes? Well that's what this theme does! ![](Images/AdvancedSlidingPanesLayouts.png)
 
 ### Custom HTML Snippets
 Faded ATM supports HTML snippets to help spice up your notes. 
 - `<div class="pageTitle">Your Text Here</div>` 
 	- ![](Images/pageTitle.png)
--  `<div class="pageTitle neutral">Your Text Here</div>`
-	- ![](Images/pageTitleNeutral.png)
-- Use of an h1 tag for a page title adds clutter usually results in the rest of the page being restricted to h2-h6. Use of this snippet makes page titles stand out while avoiding waste of a good h1 tag. 
+- Use of an h1 tag for a page title adds clutter usually results in the rest of the page being restricted to h2-h6. Use of this snippet makes page titles stand out while avoiding waste of a good h1 tag. It can also be used to center and underline any word you want. 
 - Add the class small to get small text to display in the snippet instead of the default large EX: `<div class="pageTitle neutral small">Your Text Here</div>` Useful for fancy Admonitions (requires Admonitions Plugin)
 ## Style Settings Options
 - Changes to these options usually work instantly but sometimes you need obsidian to restart obsidian for changes to work properly
