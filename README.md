@@ -19,7 +19,7 @@ Faded ATM supports HTML snippets to help spice up your notes.
 - Add the class small to get small text to display in the snippet instead of the default large EX: `<div class="pageTitle small">Your Text Here</div>` Useful for fancy Admonitions (requires Admonitions Plugin)
 ## Style Settings Options
 - Changes to these options usually work instantly but sometimes you need obsidian to restart obsidian for changes to work properly
-- ![](Images/StyleSettings.png)
+![](Images/StyleSettings.png)
 - You can chose to make panes not stack, This gives you more screen space when many panes are open.
 -  You can modify the minimum page/pane width. This can be useful for people using obsidian at lower or higher resolutions. The default setting is made with 1440p screen in mind
 -  You can enable bullet point gradient lines. This is off by default because it can make it hard to tell when a bullet begins and ends. But some may prefer the style. 
@@ -27,12 +27,12 @@ Faded ATM supports HTML snippets to help spice up your notes.
 ## Supported Plugins
 Faded currently supports full or partial styling of the following plugins. 
 - **Style Settings Plugin: **https://github.com/mgmeyers/obsidian-style-settings
+- **Calendar Plugin: **https://github.com/liamcain/obsidian-calendar-plugin
+## Plugins Planned For Support
 - **CodeMirror Options: **https://github.com/nothingislost/obsidian-codemirror-options
-	- Supported Options
-		- **Enable Edit Mode Syntax Highlighting Themes** *(recommended)*
-		- **Enable Preview Mode Syntax Highlighting Themes** *(recommended)*![](Images/CodeMirrorOptions.png)
-- **Copy Button For Code Blocks: **https://github.com/jdbrice/obsidian-code-block-copy
+	- Support for this plugin is unavalible for now but planned in the future. 
 # Kudos
-- **SlRvb** and his ***ITS-Theme*** https://github.com/SlRvb/Obsidian--ITS-Theme It was a great reference and especially helped with getting the folder, page, and bullet point icons. It also was very helpful in getting the nested lines which can be seen in bullet points lists, the file navigation pane, and the outline pane. 
+- **SlRvb** and there ***ITS-Theme*** https://github.com/SlRvb/Obsidian--ITS-Theme It was a great reference and especially helped with getting the folder, page, and bullet point icons. It also was very helpful in getting the nested lines which can be seen in bullet points lists, the file navigation pane, and the outline pane. 
+- **caro401** and there ***Royal Velvet Theme*** https://github.com/caro401/royal-velvet It was a great insperation/guide for my the gradiant headers and table header styles.
 - Andy for his initial sliding panes CSS
 
