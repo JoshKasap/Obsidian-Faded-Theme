@@ -7,6 +7,8 @@ Faded Theme For Obsidian By Josh Kasap![](Images/Faded.png)
 ## Features 
 ### Advanced Sliding Panes
 Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidian. With the release of Obsidian 1.0 we now have native support for unstacked and stacked tabs. This is great but what if you could have unstacked tab panes that also stacked like sliding panes? Well that's what this theme does! ![](Images/AdvancedSlidingPanesLayouts.png)
+### Highlight And Indent/Depress Active Note
+![](Images/ActivePage.png)
 ### Tables
 ![](Images/Table.png)
 ### Headers (Header Icons Optional With Style Settings Plugin)
