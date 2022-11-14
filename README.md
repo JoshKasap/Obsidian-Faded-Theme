@@ -16,7 +16,7 @@ Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidia
 ### Custom HTML Snippets
 Faded ATM supports HTML snippets to help spice up your notes. 
 - `<div class="pageTitle">Your Text Here</div>` 
-	- ![](Images/pageTitle.png)
+![](Images/pageTitle.png)
 - Use of an h1 tag for a page title adds clutter usually results in the rest of the page being restricted to h2-h6. Use of this snippet makes page titles stand out while avoiding waste of a good h1 tag. It can also be used to center and underline any word you want. 
 - Add the class small to get small text to display in the snippet instead of the default large EX: `<div class="pageTitle small">Your Text Here</div>` Useful for fancy Admonitions (requires Admonitions Plugin)
 ## Style Settings Options
@@ -30,6 +30,7 @@ Faded ATM supports HTML snippets to help spice up your notes.
 Faded currently supports full or partial styling of the following plugins. 
 - **Style Settings Plugin: **https://github.com/mgmeyers/obsidian-style-settings
 - **Calendar Plugin: **https://github.com/liamcain/obsidian-calendar-plugin
+![](Images/Calendar.png)
 ## Plugins Planned For Support
 - **CodeMirror Options: **https://github.com/nothingislost/obsidian-codemirror-options
 	- Support for this plugin is unavalible for now but planned in the future. 
