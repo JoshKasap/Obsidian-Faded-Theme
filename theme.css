@@ -1370,6 +1370,9 @@ body {
 
     /* Override Color Accent */
     --color-accent: var(--custom-gold-950);
+
+    /* Code */
+    --custom-code-border-color: var(--black);
 }
 /* SECTION ------------------------------- Core Theme Colors END ------------------------------- */
 
@@ -1499,6 +1502,19 @@ body {
 .callout-icon .svg-icon{
     color: var(--callout-color);
 }
+
+/* Note Style For Blockquotes Nested Inside Callouts */
+.callout blockquote{
+    border: 1px solid black;
+    border-inline: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color);
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+/* NOTE Style For Codeblocks Nested Inside A Callout */
+.callout :not(pre) > code[class*="language-"], .callout pre[class*="language-"]{
+    border: 1px solid black;
+    filter: drop-shadow(0px 0px 3px black);
+}
 /* SECTION ------------------------------- Admonition/Callout END -------------------------------*/
 
 /* SECTION ------------------------------- Blockquote START------------------------------- */
@@ -1538,6 +1554,19 @@ body {
     top: 0;
     bottom: 0;
     right: 0;
+}
+
+/* Note Style For Callouts Nested Inside Blockquotes*/
+blockquote .callout{
+    border: 1px solid black;
+    border-inline: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color);
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+/* NOTE Style For Codeblocks Nested Inside A Blockquote */
+blockquote :not(pre) > code[class*="language-"], blockquote pre[class*="language-"]{
+    border: 1px solid black;
+    filter: drop-shadow(0px 0px 3px black);
 }
 /* SECTION ------------------------------- Blockquote END------------------------------- */
 
@@ -1584,6 +1613,11 @@ tbody tr td{
 
 /* SECTION ------------------------------- Code Lines and Blocks START ------------------------------- */
 /* TODO Need To Look More Into Custom Code Blocks Style And Code Mirror Code Blocks Style */
+/* NOTE Codeblock Style */
+:not(pre) > code[class*="language-"], pre[class*="language-"]{
+    border: 1px solid var(--custom-code-border-color);
+}
+
 /* Preview Code Line */
 /* .markdown-preview-view p code, 
 .markdown-preview-view ol code, 
