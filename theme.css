@@ -1324,9 +1324,6 @@ body {
     --custom-scrollbar-width: 12px;
     --custom-scrollbar-height: 12px;    
 
-    /* Admonition */
-    --custom-admonition-border-color: var(--custom-black-950);
-
     /* Files and Folders Pane */
     --custom-folder-icon-open: var(--Red-Accent-1);
     --custom-folder-icon-closed: var(--custom-red-600);
@@ -1350,12 +1347,17 @@ body {
     --tab-text-color-focused-active: var(--text-normal); /*Not sure what this is used for*/
     --tab-text-color-focused-active-current: var(--text-normal);
 
+    /* Admonition/Callouts */
+    --custom-admonition-border-color: var(--custom-black-950);
+    --custom-callout-background-color: var(--custom-black-700);
+
     /* Blockquotes */
     --blockquote-border-thickness: 2px;
-    --blockquote-border-color: var(--interactive-accent);
+    --blockquote-border-color: var(--black);
     --blockquote-font-style: normal;
     --blockquote-color: inherit;
-    --blockquote-background-color: var(--custom-background-tertiary);
+    --blockquote-background-color: var(--custom-black-700);
+    --custom-blockquote-border-accent-color: var(--custom-red-600);
 
     /* Search & Replace*/
     --custom-match-found-indicator-color: var(--white);
@@ -1401,7 +1403,7 @@ body {
 /* NOTE Basic Callout Styling */
 .callout{
     border: 1px solid black;
-    background-color: var(--custom-black-700);
+    background-color: var(--custom-callout-background-color);
 }
 
 /* NOTE Add Drop Shadow To Nested Callouts */
@@ -1425,57 +1427,119 @@ body {
     filter: drop-shadow(2px 2px 2px black);
 }
 
+/* NOTE This is the style for all callouts that are not explicitly named */
+.callout[data-callout]{
+    --callout-color: var(--interactive-accent);
+    border-inline: 1px solid var(--interactive-accent);
+}
+
 /* NOTE Callout Special Stylings */
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
-    border-inline: 1px solid rgb(0, 176, 255);
+    --callout-color: #00b0ff;
+    border-inline: 1px solid #00b0ff;
 }
 .callout[data-callout="info"],
 .callout[data-callout="todo"] {
-    border-inline: 1px solid rgb(0, 184, 212);
+    --callout-color: #00b8d4;
+    border-inline: 1px solid #00b8d4;
 }
 .callout[data-callout="tip"],
 .callout[data-callout="hint"],
 .callout[data-callout="important"] {
-    border-inline: 1px solid rgb(0, 191, 165);
+    --callout-color: #00bfa5;
+    border-inline: 1px solid #00bfa5;
 }
 .callout[data-callout="success"],
 .callout[data-callout="check"],
 .callout[data-callout="done"] {
-    border-inline: 1px solid rgb(0, 200, 83);
+    --callout-color: #00c853;
+    border-inline: 1px solid #00c853;
 }
 .callout[data-callout="question"],
 .callout[data-callout="help"],
 .callout[data-callout="faq"] {
-    border-inline: 1px solid rgb(100, 221, 23);
+    --callout-color: #64dd17;
+    border-inline: 1px solid #64dd17;
 }
 .callout[data-callout="warning"],
 .callout[data-callout="caution"],
 .callout[data-callout="attention"] {
-    border-inline: 1px solid rgb(255, 145, 0);
+    --callout-color: #ff9100;
+    border-inline: 1px solid #ff9100;
 
 }
 .callout[data-callout="failure"],
 .callout[data-callout="fail"],
 .callout[data-callout="missing"] {
-    border-inline: 1px solid rgb(255, 82, 82);
+    --callout-color: #ff5252;
+    border-inline: 1px solid #ff5252;
 }
 .callout[data-callout="danger"],
 .callout[data-callout="error"] {
-    border-inline: 1px solid rgb(255, 23, 68);
+    --callout-color: #ff1744;
+    border-inline: 1px solid #ff1744;
 }
 .callout[data-callout="bug"] {
-  border-inline: 1px solid #f50057;
+    --callout-color: #f50057;
+    border-inline: 1px solid #f50057;
 }
 .callout[data-callout="example"] {
-  border-inline: 1px solid rgb(124, 77, 255);
+    --callout-color: #7c4dff;
+    border-inline: 1px solid #7c4dff;
 }
 .callout[data-callout="quote"],
 .callout[data-callout="cite"] {
-  border-inline: 1px solid rgb(158, 158, 158);
+    --callout-color: #9e9e9e;
+    border-inline: 1px solid #9e9e9e;
+}
+
+/* Note Callouts Will Use The Set Callout Color */
+.callout-icon .svg-icon{
+    color: var(--callout-color);
 }
 /* SECTION ------------------------------- Admonition/Callout END -------------------------------*/
+
+/* SECTION ------------------------------- Blockquote START------------------------------- */
+/* DONE */
+/* NOTE BlockQuote Style */
+.markdown-preview-view blockquote {
+    padding-right: 20px; /*Don't overlap with "*/
+    border: 1px solid black;
+    border-inline: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color);
+    border-radius: var(--callout-radius);
+    padding: var(--callout-padding);
+    border-bottom: 0px;
+    border-top: 0px;
+}
+
+/* NOTE Nested BlockQuote Style */
+.markdown-preview-view blockquote blockquote {
+    /* border-bottom: 0px;
+    filter: drop-shadow(4px -2px 5px black); */
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+/* NOTE BlockQuote Edit Mode Style Left Side Accent */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before{
+    border-left: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color);
+    /* border-right: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color); */
+}
+
+/* NOTE BlockQuote Edit Mode Style Right Side Accent */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:after, .markdown-source-view.mod-cm6 .cm-blockquote-border:after{
+    content: "\200b";
+    display: block;
+    width: 1px;
+    border-right: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color);
+    color: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+/* SECTION ------------------------------- Blockquote END------------------------------- */
 
 /* SECTION ------------------------------- Table START ------------------------------- */
 /* DONE */
@@ -1553,26 +1617,6 @@ tbody tr td{
     color: var(--interactive-accent);
 }
 /* SECTION ------------------------------- Code Lines and Blocks END ------------------------------- */
-
-/* SECTION ------------------------------- Blockquote START------------------------------- */
-/* DONE */
-/* NOTE BlockQuote Style */
-.markdown-preview-view blockquote {
-    border: 1px ridge var(--blockquote-border-color);
-    border-left-width: 8px;
-    border-right-width: 0px;
-    border-top-width: 0px;
-    /* border-image:linear-gradient(-155deg, #ffffff00 50%,var(--custom-red-700) 100%) 1; */
-    padding-right: 20px; /*Don't overlap with "*/
-}
-
-/* NOTE Nested BlockQuote Style */
-.markdown-preview-view blockquote blockquote {
-    border-bottom: 0px;
-    filter: drop-shadow(4px -2px 5px black);
-}
-/* SECTION ------------------------------- Blockquote END------------------------------- */
-
 /* SECTION ------------------------------- Modals START -------------------------------*/
 /* DONE */
 /* NOTE Blur Effect When Modal Is Shown */
