@@ -2191,7 +2191,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /* SECTION ------------------------------- Dropdown List Indicators END ------------------------------- */
 /* SECTION ------------------------------- Links AND Tags START ------------------------------- */
 /* TODO Finish Commenting This Section */
-a.internal-link, .markdown-source-view.is-live-preview span.cm-hmd-internal-link{
+:not(h1, h2, h3, h4, h5, h6) > .internal-link, .markdown-source-view.is-live-preview span.cm-hmd-internal-link:not(.cm-header){
     display: inline-block;
     border: 1px solid var(--text-a);
     border-radius: 5px;
@@ -2210,7 +2210,29 @@ a.internal-link, .markdown-source-view.is-live-preview span.cm-hmd-internal-link
     box-shadow: var(--custom-link-box-shadow);
 }
 
-a.internal-link:hover, .markdown-source-view.is-live-preview span.cm-hmd-internal-link:hover{
+/* NOTE Header Page Link  */
+h1 > a.internal-link,
+h2 > a.internal-link,
+h3 > a.internal-link,
+h4 > a.internal-link,
+h5 > a.internal-link,
+h6 > a.internal-link,
+.markdown-source-view.is-live-preview span.cm-hmd-internal-link.cm-header{
+    border: 1px solid var(--text-a);
+    border-radius: 5px;
+    padding: 0px 4px;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--custom-link-background-color);
+    box-shadow: unset;
+    z-index: 1;
+}
+
+a.internal-link:hover, 
+.markdown-source-view.is-live-preview span.cm-hmd-internal-link:hover, 
+.markdown-source-view.is-live-preview .cm-header.cm-hmd-internal-link:hover:after{
     color: #ffffff !important;
     animation-name: text-shadow_color_change_V2;
     animation-duration: 2s;
@@ -2330,12 +2352,18 @@ a.tag:hover{
 /* SECTION ------------------------------- Heading/Headers START ------------------------------- */
 /* DONE */
 /* NOTE Base Header Style - Preview Mode & Edit Mode*/
-.markdown-preview-view h1, .cm-header-1,
-.markdown-preview-view h2, .cm-header-2,
-.markdown-preview-view h3, .cm-header-3,
-.markdown-preview-view h4, .cm-header-4,
-.markdown-preview-view h5, .cm-header-5,
-.markdown-preview-view h6, .cm-header-6{
+.markdown-preview-view h1, .cm-header-1, .markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link,
+.markdown-preview-view h2, .cm-header-2, .markdown-source-view.is-live-preview .cm-header.cm-header-2.cm-hmd-internal-link,
+.markdown-preview-view h3, .cm-header-3, .markdown-source-view.is-live-preview .cm-header.cm-header-3.cm-hmd-internal-link,
+.markdown-preview-view h4, .cm-header-4, .markdown-source-view.is-live-preview .cm-header.cm-header-4.cm-hmd-internal-link,
+.markdown-preview-view h5, .cm-header-5, .markdown-source-view.is-live-preview .cm-header.cm-header-5.cm-hmd-internal-link,
+.markdown-preview-view h6, .cm-header-6, .markdown-source-view.is-live-preview .cm-header.cm-header-6.cm-hmd-internal-link,
+.markdown-preview-view h1 > a.internal-link,
+.markdown-preview-view h2 > a.internal-link,
+.markdown-preview-view h3 > a.internal-link,
+.markdown-preview-view h4 > a.internal-link,
+.markdown-preview-view h5 > a.internal-link,
+.markdown-preview-view h6 > a.internal-link{
     position: relative;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2411,8 +2439,52 @@ a.tag:hover{
     padding: 0.0em 0.25em;
 }
 
+/* Note Header As Link Color Edit Mode */
+.markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link,
+.markdown-source-view.is-live-preview .cm-header.cm-header-2.cm-hmd-internal-link,
+.markdown-source-view.is-live-preview .cm-header.cm-header-3.cm-hmd-internal-link,
+.markdown-source-view.is-live-preview .cm-header.cm-header-4.cm-hmd-internal-link,
+.markdown-source-view.is-live-preview .cm-header.cm-header-5.cm-hmd-internal-link,
+.markdown-source-view.is-live-preview .cm-header.cm-header-6.cm-hmd-internal-link{
+    text-decoration: underline;
+    -webkit-text-fill-color: rgba(0,0,0,.5);
+    filter: opacity(1) brightness(2.25) saturate(2.15) contrast(1.1);
+    filter: opacity(1) brightness(2.25) saturate(1.95) contrast(1)
+}
+
+/* Note Header As Link Color Preivew Mode */
+.markdown-preview-view h1 > a.internal-link,
+.markdown-preview-view h2 > a.internal-link,
+.markdown-preview-view h3 > a.internal-link,
+.markdown-preview-view h4 > a.internal-link,
+.markdown-preview-view h5 > a.internal-link,
+.markdown-preview-view h6 > a.internal-link{
+    text-decoration: underline;
+    -webkit-text-fill-color: rgba(0,0,0,.5);
+    filter:opacity(1) brightness(2.25) saturate(1.37) contrast(1.00);
+    filter:opacity(1) brightness(2.25) saturate(1.00) contrast(1.00)
+}
+   
+/* Note Header As Link Hover Color*/
+.markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link:hover,
+.markdown-source-view.is-live-preview .cm-header.cm-header-2.cm-hmd-internal-link:hover,
+.markdown-source-view.is-live-preview .cm-header.cm-header-3.cm-hmd-internal-link:hover,
+.markdown-source-view.is-live-preview .cm-header.cm-header-4.cm-hmd-internal-link:hover,
+.markdown-source-view.is-live-preview .cm-header.cm-header-5.cm-hmd-internal-link:hover,
+.markdown-source-view.is-live-preview .cm-header.cm-header-6.cm-hmd-internal-link:hover,
+.markdown-preview-view h1 > a.internal-link:hover,
+.markdown-preview-view h2 > a.internal-link:hover,
+.markdown-preview-view h3 > a.internal-link:hover,
+.markdown-preview-view h4 > a.internal-link:hover,
+.markdown-preview-view h5 > a.internal-link:hover,
+.markdown-preview-view h6 > a.internal-link:hover{
+    text-decoration: underline;
+    filter: opacity(1) brightness(1.0) saturate(1);
+    -webkit-text-fill-color: unset;
+}
+
 /* NOTE Header 1 Color */
-.markdown-preview-view h1, .cm-header-1
+.markdown-preview-view h1, .cm-header-1, .markdown-preview-view h1 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2420,6 +2492,25 @@ a.tag:hover{
         var(--custom-h1-gradiant-2) var(--custom-h1-gradiant-2-percent)
     );
 }
+
+/* .markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link:after{
+    content: "";
+    background-image: linear-gradient(
+        var(--custom-gradientDegree),
+        var(--custom-h1-gradiant-1) var(--custom-h1-gradiant-1-percent),
+        var(--custom-h1-gradiant-2) var(--custom-h1-gradiant-2-percent)
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 3px;
+    right: 0%;
+} */
+
+/* .markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link:after:hover{
+    background: red!important;
+} */
+
 
 /* NOTE Inline Header 1 Color */
 .markdown-preview-view h1 code, .markdown-source-view .cm-header-1.cm-inline-code{
@@ -2450,7 +2541,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 2 Color */
-.markdown-preview-view h2, .cm-header-2
+.markdown-preview-view h2, .cm-header-2, .markdown-preview-view h2 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-2.cm-hmd-internal-link
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2488,7 +2579,7 @@ a.tag:hover{
 }
   
 /* NOTE Header 3 Color */
-.markdown-preview-view h3, .cm-header-3
+.markdown-preview-view h3, .cm-header-3, .markdown-preview-view h3 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-3.cm-hmd-internal-link
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2526,7 +2617,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 4 Color */
-.markdown-preview-view h4, .cm-header-4
+.markdown-preview-view h4, .cm-header-4, .markdown-preview-view h4 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-4.cm-hmd-internal-link
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2564,7 +2655,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 5 Color */
-.markdown-preview-view h5, .cm-header-5
+.markdown-preview-view h5, .cm-header-5, .markdown-preview-view h5 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-5.cm-hmd-internal-link
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2602,7 +2693,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 6 Color */
-.markdown-preview-view h6, .cm-header-6
+.markdown-preview-view h6, .cm-header-6, .markdown-preview-view h6 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-6.cm-hmd-internal-link
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
