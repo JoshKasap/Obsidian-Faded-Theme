@@ -13,7 +13,7 @@ Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidia
 ![](Images/Table.png)
 ### Headers (Header Icons Optional With Style Settings Plugin)
 ![](Images/Headers.png)
-#### Headers Can Also Be Note Links
+#### Headers Can Also Contain Links To Other notes
 ![](Images/HeaderLinks.png)
 ### Bullet Lists, Numbered Lists, And Checkboxes
 ![](Images/ListsAndCheckboxes.png)
