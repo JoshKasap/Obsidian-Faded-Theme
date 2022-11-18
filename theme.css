@@ -2103,6 +2103,10 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 }
 /* SECTION ------------------------------- File Dock END ------------------------------- */
 /* SECTION ------------------------------- File Dock Ozan File Tree Alternative Plugin START -------------------------------*/
+.oz-folder-pane, .oz-file-list-pane{
+    --background-secondary-alt: var(--custom-background-tertiary);
+}
+
 /* TODO Want To Do More With This So Style Can Match Normal File Tree But Plugin HTML Makes This Not Possible ATM */
 /* NOTE Hide Defualt Folder And Page Icon */
 .file-tree-plugin-view .oz-folder-element .oz-icon-div svg,
@@ -2161,6 +2165,42 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /* NOTE File Icon Hover */
 .file-tree-plugin-view .oz-nav-file-title:hover .oz-nav-file-title-content::before {
     color: var(--custom-file-icon-hover);
+}
+
+/* NOTE Style All Floating Menus */
+.oz-folders-action-items, .oz-flex-container, .oz-file-tree-header, .oz-flex-container{
+    border-radius: 5px;
+    border: 1px solid var(--divider-color);
+}
+
+/* NOTE Style Folder Floating Menu */
+.oz-folders-action-items{
+    margin-left:-8px;
+    margin-right:3px;
+}
+
+/* NOTE Style Page Floating Menu*/
+.oz-file-tree-header-wrapper{
+    padding: 0px;
+    margin-left:-3px;
+}
+
+/* NOTE Folder File Divider */
+#file-tree-divider{
+    /* height: 1px; */
+    /* background-color:var(--divider-color); */
+    border-bottom:1px solid var(--divider-color);
+    opacity: 1;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/* NOTE Folder File Divider Hover */
+#file-tree-divider:hover{
+    /* height: 1px; */
+    /* border-bottom:1px solid var(--interactive-accent); */
+    background-color:var(--interactive-accent);
+    opacity: 1;
 }
 /* SECTION ------------------------------- File Dock Ozan File Tree Alternative Plugin END ------------------------------- */
 
