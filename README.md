@@ -40,9 +40,11 @@ Faded ATM supports HTML snippets to help spice up your notes.
 Faded currently supports full or partial styling of the following plugins. 
 - **Style Settings Plugin: **https://github.com/mgmeyers/obsidian-style-settings
 - **Calendar Plugin: **https://github.com/liamcain/obsidian-calendar-plugin
+
 ![](Images/Calendar.png)
 - **Ozan's File Tree Alternative Plugin: ** https://github.com/ozntel/file-tree-alternative
 	- Styles for this plugin are not throughly tested on every combanation of settings availble for the plugin. 
+
 ![](Images/OzanFileTree.png)
 ## Plugins Planned For Support
 - **CodeMirror Options: **https://github.com/nothingislost/obsidian-codemirror-options
