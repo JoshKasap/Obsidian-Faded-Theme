@@ -2230,6 +2230,41 @@ h6 > a.internal-link,
     z-index: 1;
 }
 
+/* NOTE Header Page Tag Preview Mode & Edit Mode*/
+h1 > a.tag, h1 > a.tag:hover,
+h2 > a.tag, h2 > a.tag:hover,
+h3 > a.tag, h3 > a.tag:hover,
+h4 > a.tag, h4 > a.tag:hover,
+h5 > a.tag, h5 > a.tag:hover,
+h6 > a.tag, h6 > a.tag:hover{
+    /* NOTE Tag Preview View */
+    background-color: transparent;
+    position: relative;
+}
+
+/* NOTE Header Page Tag Preview Mode*/
+h1 > a.tag::before, h1 > a.tag:hover::before,
+h2 > a.tag::before, h2 > a.tag:hover::before,
+h3 > a.tag::before, h3 > a.tag:hover::before,
+h4 > a.tag::before, h4 > a.tag:hover::before,
+h5 > a.tag::before, h5 > a.tag:hover::before,
+h6 > a.tag::before, h6 > a.tag:hover::before{
+    content: "";
+    background: var(--tag-background);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    z-index: -2;
+
+    /* NOTE header filter is applied twice on this element so we add another filter here that effectivly cancels out the dupicated filter */
+    filter: brightness(calc(1 - var(--custom-heading-filter-brightness) + 1)) 
+    contrast(calc( 1 - var(--custom-heading-filter-contrast) + 1)) 
+    saturate(calc( 1 - var(--custom-heading-filter-saturate) + 1));
+}
+
 a.internal-link:hover, 
 .markdown-source-view.is-live-preview span.cm-hmd-internal-link:hover, 
 .markdown-source-view.is-live-preview .cm-header.cm-hmd-internal-link:hover:after{
@@ -2380,6 +2415,18 @@ a.tag:hover{
     ;
 }
 
+.markdown-preview-view h1 > a.tag,
+.markdown-preview-view h2 > a.tag,
+.markdown-preview-view h3 > a.tag,
+.markdown-preview-view h4 > a.tag,
+.markdown-preview-view h5 > a.tag,
+.markdown-preview-view h6 > a.tag{
+    position: relative;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
 /* NOTE Base Header Style - Edit Mode*/
 .cm-header-1,
 .cm-header-2,
@@ -2387,7 +2434,9 @@ a.tag:hover{
 .cm-header-4,
 .cm-header-5,
 .cm-header-6{
-    z-index: -1; /* Can't See Cursor Position If This Isn't Included*/
+    /* NOTE Before I Couldn't Can't See Cursor Position If This Isn't Included - But That Dosen't Seem To Be the Case Anymore*/
+    /* NOTE Also Z-index: -1; Seemed To Remove Tag Hover Effect For Tags Placed In Headers */
+    /* z-index: -1; */
 }
 
 /* NOTE Base Inline Header Style - Preview Mode*/
@@ -2484,7 +2533,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 1 Color */
-.markdown-preview-view h1, .cm-header-1, .markdown-preview-view h1 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link
+.markdown-preview-view h1, .cm-header-1, .markdown-preview-view h1 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-1.cm-hmd-internal-link, .markdown-preview-view h1 > a.tag
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2541,7 +2590,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 2 Color */
-.markdown-preview-view h2, .cm-header-2, .markdown-preview-view h2 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-2.cm-hmd-internal-link
+.markdown-preview-view h2, .cm-header-2, .markdown-preview-view h2 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-2.cm-hmd-internal-link, .markdown-preview-view h2 > a.tag
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2579,7 +2628,7 @@ a.tag:hover{
 }
   
 /* NOTE Header 3 Color */
-.markdown-preview-view h3, .cm-header-3, .markdown-preview-view h3 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-3.cm-hmd-internal-link
+.markdown-preview-view h3, .cm-header-3, .markdown-preview-view h3 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-3.cm-hmd-internal-link, .markdown-preview-view h3 > a.tag
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2617,7 +2666,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 4 Color */
-.markdown-preview-view h4, .cm-header-4, .markdown-preview-view h4 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-4.cm-hmd-internal-link
+.markdown-preview-view h4, .cm-header-4, .markdown-preview-view h4 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-4.cm-hmd-internal-link, .markdown-preview-view h4 > a.tag
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2655,7 +2704,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 5 Color */
-.markdown-preview-view h5, .cm-header-5, .markdown-preview-view h5 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-5.cm-hmd-internal-link
+.markdown-preview-view h5, .cm-header-5, .markdown-preview-view h5 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-5.cm-hmd-internal-link, .markdown-preview-view h5 > a.tag
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
@@ -2693,7 +2742,7 @@ a.tag:hover{
 }
 
 /* NOTE Header 6 Color */
-.markdown-preview-view h6, .cm-header-6, .markdown-preview-view h6 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-6.cm-hmd-internal-link
+.markdown-preview-view h6, .cm-header-6, .markdown-preview-view h6 > a.internal-link, .markdown-source-view.is-live-preview .cm-header.cm-header-6.cm-hmd-internal-link, .markdown-preview-view h6 > a.tag
 {
     background-image: linear-gradient(
         var(--custom-gradientDegree),
