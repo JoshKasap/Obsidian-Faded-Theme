@@ -1137,7 +1137,7 @@ body {
     --link-external-decoration: underline;
     --link-external-decoration-hover: underline;
     --link-external-filter: none;
-    --link-unresolved-color: var(--custom-gold-2-950);
+    --link-unresolved-color: var(--text-faint);
     --link-unresolved-opacity: 0.7;
     --link-unresolved-filter: none;
     --link-unresolved-decoration-style: solid;
@@ -1296,7 +1296,7 @@ body {
     --checkbox-color: var(--interactive-accent);
     --checkbox-border-color: var(--text-faint);
     --checkbox-border-color-hover: var(--text-muted);
-    --checklist-done-color: var(--text-muted);
+    --checklist-done-color: var(--text-faint);
     
     --custom-checkbox-border-image-gradient-degree-unchecked: 45deg;
     --custom-checkbox-border-image-gradient-color-1-unchecked: var(--transparent); 
@@ -1366,6 +1366,9 @@ body {
     --custom-highlight-bg-color: var(--custom-red-900);
 
     /* Text */
+    --text-normal: var(--color-base-100);
+    --text-muted: var(--color-base-70);
+    --text-faint: var(--color-base-50);
     --text-on-accent: var(--background-primary-active);
 
     /* Override Color Accent */

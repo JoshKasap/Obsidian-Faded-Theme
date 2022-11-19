@@ -23,6 +23,8 @@ Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidia
 ![](Images/FileTree.png)
 ### Outliner:
 ![](Images/Outliner.png)
+### Better Popovers
+![](Images/Popovers.png)
 ### Custom HTML Snippets
 Faded ATM supports HTML snippets to help spice up your notes. 
 - `<div class="pageTitle">Your Text Here</div>` 
@@ -49,7 +51,7 @@ Faded currently supports full or partial styling of the following plugins.
 ## Plugins Planned For Support
 - **CodeMirror Options: **https://github.com/nothingislost/obsidian-codemirror-options
 	- Support for this plugin is unavalible for now but planned in the future. 
-## Todo List (As of 11-15-2022)
+## Todo List (As of 11-19-2022)
 ![](Images/TodoList.png)
 # Kudos
 - **SlRvb** and there ***ITS-Theme*** https://github.com/SlRvb/Obsidian--ITS-Theme It was a great reference and especially helped with getting the folder, page, and bullet point icons. It also was very helpful in getting the nested lines which can be seen in bullet points lists, the file navigation pane, and the outline pane. 
