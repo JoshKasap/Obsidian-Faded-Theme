@@ -25,6 +25,9 @@ Faded uses advanced CSS to further improve sliding/stacked panes/tabs in obsidia
 ![](Images/Outliner.png)
 ### Better Popovers
 ![](Images/Popovers.png)
+### Support For efemkay's MCL Multi Column Css Snippet
+This is god teir css snippet allows for multi column layouts in your obsidian vault. It also can be customized using the style settings plugin. Documentation on how to use these layouts can be found here: https://efemkay.github.io/obsidian-modular-css-layout/multi-column/02-using-callout/
+![](Images/MCLMultiColumn.png)
 ### Custom HTML Snippets
 Faded ATM supports HTML snippets to help spice up your notes. 
 - `<div class="pageTitle">Your Text Here</div>` 
@@ -57,4 +60,4 @@ Faded currently supports full or partial styling of the following plugins.
 - **SlRvb** and there ***ITS-Theme*** https://github.com/SlRvb/Obsidian--ITS-Theme It was a great reference and especially helped with getting the folder, page, and bullet point icons. It also was very helpful in getting the nested lines which can be seen in bullet points lists, the file navigation pane, and the outline pane. 
 - **caro401** and there ***Royal Velvet Theme*** https://github.com/caro401/royal-velvet It was a great insperation/guide for my the gradiant headers and table header styles.
 - Andy for his initial sliding panes CSS
-
+- **efemkay** and there ***MCL Multi Column Css Snippets*** https://github.com/efemkay/obsidian-modular-css-layout
