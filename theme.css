@@ -431,6 +431,7 @@ body {
     --link-unresolved-filter: none;
     --link-unresolved-decoration-style: solid;
     --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.3);
+    --custom-link-radius: 4px;
     /* Lists */
     --list-indent: 2em;
     --list-spacing: 0.075em;
@@ -611,7 +612,7 @@ body {
     --tag-border-width: 0px;
     --tag-padding-x: 4px;
     --tag-padding-y: 2px;
-    --tag-radius: 5px;
+    --tag-radius: 4px;
     /* Window frame */
     --titlebar-background: var(--background-secondary);
     --titlebar-background-focused: var(--background-secondary-alt);
@@ -1369,11 +1370,11 @@ body {
     --custom-link-hover-animation-color-3: var(--custom-gold-950);
 
     /* Tags */
-    --tag-color: var(--custom-gold-950);
+    --tag-color: var(--custom-red-500);
     --tag-color-hover: var(--white);
-    --custom-tag-box-shadow-color: var(--custom-gold-950);
-    --tag-background: var(--custom-black-600);
-    --tag-background-hover: var(--custom-black-600);
+    --custom-tag-box-shadow-color: var(--custom-white-100);
+    --tag-background: var(--background-primary-alt);
+    --tag-background-hover: var(--background-primary-alt);
     --tag-border-color: hsla(var(--interactive-accent-hsl), 0.15);
     --tag-border-color-hover: hsla(var(--interactive-accent-hsl), 0.15);
     --custom-tag-hover-animation-color-1: var(--white);
@@ -2492,7 +2493,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 :not(h1, h2, h3, h4, h5, h6) > .internal-link, .markdown-source-view.is-live-preview span.cm-hmd-internal-link:not(.cm-header){
     display: inline-block;
     border: 1px solid var(--text-a);
-    border-radius: 5px;
+    border-radius: var(--custom-link-radius);
     padding: 0px 4px;
     font-size: .95em;
     vertical-align: sub;
@@ -2598,7 +2599,7 @@ a.internal-link:hover,
 
 /* NOTE Tag Preview View */
 a.tag{
-    box-shadow: inset 0px 0px 0px 1px var(--custom-tag-box-shadow-color);
+    box-shadow: inset 0px 0px 0px 0.75px var(--custom-tag-box-shadow-color);
 }
 
 /* NOTE Tag Preview View On Hover */
