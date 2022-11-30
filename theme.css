@@ -680,63 +680,6 @@ body {
     --custom-gradientDegree: 135deg;
     /* Outliner */
     --custom-outliner-indent-lines-width: 1px;
-}
-.theme-light {
-    color-scheme: light;
-    --highlight-mix-blend-mode: darken;
-    --mono-rgb-0: 255, 255, 255;
-    --mono-rgb-100: 0, 0, 0;
-    --color-red-rgb: 228, 55, 75;
-    --color-red: #E4374B;
-    --color-green-rgb: 12, 181, 79;
-    --color-green: #0cb54f;
-    --color-orange: #d96c00;
-    --color-yellow: #BD8E37;
-    --color-cyan: #2db7b5;
-    --color-blue: #086DDD;
-    --color-purple: #876be0;
-    --color-pink: #C32B74;
-    --color-base-00: #ffffff;
-    --color-base-05: #fcfcfc;
-    --color-base-10: #fafafa;
-    --color-base-20: #f6f6f6;
-    --color-base-25: #e3e3e3;
-    --color-base-30: #e0e0e0;
-    --color-base-35: #d4d4d4;
-    --color-base-40: #bdbdbd;
-    --color-base-50: #ababab;
-    --color-base-60: #707070;
-    --color-base-70: #5a5a5a;
-    --color-base-100: #222222;
-    --color-accent-hsl: var(--accent-h),
-                var(--accent-s),
-                var(--accent-l);
-    --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-    --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 2.5%));
-    --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
-    --background-secondary-alt: var(--color-base-05);
-    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
-    --background-modifier-cover: rgba(220, 220, 220, 0.4);
-    --text-highlight-bg: rgba(255, 208, 0, 0.4);
-    --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-    --input-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12),
-            0 2px 3px 0 rgba(0,0,0,.05),
-            0 1px 1.5px 0 rgba(0,0,0,.03),
-            0 1px 2px 0 rgba(0,0,0,.04),
-            0 0 0 0 transparent;
-    --input-shadow-hover: inset 0 0 0 1px rgba(0, 0, 0, 0.17),
-            0 2px 3px 0 rgba(0,0,0,.1),
-            0 1px 1.5px 0 rgba(0,0,0,.03),
-            0 1px 2px 0 rgba(0,0,0,.04),
-            0 0 0 0 transparent;
-    --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028),
-            0px 3.4px 6.7px rgba(0, 0, 0, .042),
-            0px 15px 30px rgba(0, 0, 0, .07);
-    --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071),
-            0px 6.3px 24.7px rgba(0, 0, 0, 0.112),
-            0px 30px 90px rgba(0, 0, 0, 0.2);
-}
-.theme-dark {
 
     /* NOTE These Colors Are To Be Phased Out */
     --White-00: #dcddde;      /* Original Color*/
@@ -778,8 +721,18 @@ body {
 
 
     /* Note These Colors Are To Be Moved To Body Once Work On Light Theme Starts */
-    --custom-white-100: #dcddde; 
-    --custom-white-200: #aab3ca; 
+    --custom-white-100: #dcddde; /*Orignal white-100*/
+    --custom-white-200: #aab3ca; /*Orignal white-200*/
+
+    --custom-white-2-100: #f2f3f3;
+    --custom-white-2-200: #e8eaeb;
+    --custom-white-2-300: #dcddde;
+    --custom-white-2-400: #cccfd1;
+    --custom-white-2-500: #bfc2c4;
+    --custom-white-2-600: #adb0b3;
+    --custom-white-2-700: #9a9c9e;
+    --custom-white-2-800: #87898b;
+    --custom-white-2-900: #777b7e;
 
     --custom-gold-250: #f1e4c8;
     --custom-gold-500: #e4d1aa;
@@ -818,7 +771,8 @@ body {
     --custom-grey-750:  #2a2c2d;
     --custom-grey-950: #121415;
     
-
+    --custom-black-100: #58606d;
+    --custom-black-200: #4a525f;
     --custom-black-300: #2f3641;
     --custom-black-400: #252b33;
     --custom-black-500: #232830;
@@ -1056,7 +1010,272 @@ body {
     --rose-700:	#be123c;
     --rose-800:	#9f1239;
     --rose-900:	#881337;
+}
+.theme-light {
+    color-scheme: light;
+    --highlight-mix-blend-mode: darken;
+    --mono-rgb-0: 255, 255, 255;
+    --mono-rgb-100: 0, 0, 0;
+    --color-red-rgb: 228, 55, 75;
+    --color-red: #E4374B;
+    --color-green-rgb: 12, 181, 79;
+    --color-green: #0cb54f;
+    --color-orange: #d96c00;
+    --color-yellow: #BD8E37;
+    --color-cyan: #2db7b5;
+    --color-blue: #086DDD;
+    --color-purple: #876be0;
+    --color-pink: #C32B74;
+    --color-base-00: #ffffff;
+    --color-base-05: #fcfcfc;
+    --color-base-10: #fafafa;
+    --color-base-20: #f6f6f6;
+    --color-base-25: #e3e3e3;
+    --color-base-30: #e0e0e0;
+    --color-base-35: #d4d4d4;
+    --color-base-40: #bdbdbd;
+    --color-base-50: #ababab;
+    --color-base-60: #707070;
+    --color-base-70: #5a5a5a;
+    --color-base-100: #222222;
+    --color-accent-hsl: var(--accent-h),
+                var(--accent-s),
+                var(--accent-l);
+    --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 2.5%));
+    --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
 
+    /* Backgrounds */
+    --background-primary: var(--custom-white-2-100);
+    --background-primary-active: var(--white);
+    --background-primary-alt: var(--custom-white-2-200);
+    --background-secondary: var(--custom-white-2-200);
+    --background-secondary-alt: var(--custom-white-2-400);
+    --custom-background-tertiary: var(--custom-white-2-300);
+
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+    --background-modifier-cover: rgba(220, 220, 220, 0.4);
+    --text-highlight-bg: rgba(255, 208, 0, 0.4);
+    --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+    --input-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12),
+            0 2px 3px 0 rgba(0,0,0,.05),
+            0 1px 1.5px 0 rgba(0,0,0,.03),
+            0 1px 2px 0 rgba(0,0,0,.04),
+            0 0 0 0 transparent;
+    --input-shadow-hover: inset 0 0 0 1px rgba(0, 0, 0, 0.17),
+            0 2px 3px 0 rgba(0,0,0,.1),
+            0 1px 1.5px 0 rgba(0,0,0,.03),
+            0 1px 2px 0 rgba(0,0,0,.04),
+            0 0 0 0 transparent;
+    --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028),
+            0px 3.4px 6.7px rgba(0, 0, 0, .042),
+            0px 15px 30px rgba(0, 0, 0, .07);
+    --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071),
+            0px 6.3px 24.7px rgba(0, 0, 0, 0.112),
+            0px 30px 90px rgba(0, 0, 0, 0.2);
+
+    /* Interactive Accents */
+    --interactive-accent-hsl: var(--color-accent-hsl);
+    --interactive-accent: var(--custom-gold-950);
+    --interactive-accent-hover: var(--custom-gold-500);
+    --custom-interactive-accent-active: var(--custom-gold-2-950);
+
+    /* Headings Text Color */
+    --custom-inline-heading-color: var(--custom-black-800);
+
+    /* Headings Filters */
+    /* --custom-heading-filter-brightness: .95;
+    --custom-heading-filter-contrast: 1.1;
+    --custom-heading-filter-saturate: 1.15;
+    --custom-heading-filter-drop-shadow-color: black;
+    --custom-heading-filter-drop-shadow-blur: 6px; */
+
+    --custom-heading-filter-brightness: .9;
+    --custom-heading-filter-contrast: 1.25;
+    --custom-heading-filter-saturate: 1.15;
+    --custom-heading-filter-drop-shadow-color: black;
+    --custom-heading-filter-drop-shadow-blur: 6px;
+
+    /* Heading Borders */
+    --custom-inline-heading-border-width: 1px;
+    --custom-inline-heading-border-style: solid;
+    --custom-inline-heading-border-color: var(--custom-black-950);
+    --custom-inline-heading-box-shadow-inset-width: 1px;
+    --custom-inline-heading-box-shadow-inset-blur: 0px;
+    --custom-inline-heading-box-shadow-inset-color: var(--custom-white-200);
+    --custom-inline-heading-box-shadow-outer-width: 0px;
+    --custom-inline-heading-box-shadow-outer-blur: 0px;
+    --custom-inline-heading-box-shadow-outer-color: var(--custom-black-950);
+
+    /* Headings Gradient Start/End Percents */
+    --custom-h1-gradiant-1-percent: 0;
+    --custom-h2-gradiant-1-percent: 0;
+    --custom-h3-gradiant-1-percent: 0;
+    --custom-h4-gradiant-1-percent: 0;
+    --custom-h5-gradiant-1-percent: 0;
+    --custom-h6-gradiant-1-percent: 0;
+    --custom-h1-gradiant-2-percent: 30%;
+    --custom-h2-gradiant-2-percent: 30%;
+    --custom-h3-gradiant-2-percent: 30%;
+    --custom-h4-gradiant-2-percent: 30%;
+    --custom-h5-gradiant-2-percent: 30%;
+    --custom-h6-gradiant-2-percent: 30%;
+
+    /* Inline Headings Gradient Start/End Percents */
+    --custom-h1-gradiant-inline-1-percent: 0;
+    --custom-h2-gradiant-inline-1-percent: 0;
+    --custom-h3-gradiant-inline-1-percent: 0;
+    --custom-h4-gradiant-inline-1-percent: 0;
+    --custom-h5-gradiant-inline-1-percent: 0;
+    --custom-h6-gradiant-inline-1-percent: 0;
+    --custom-h1-gradiant-inline-2-percent: 100%;
+    --custom-h2-gradiant-inline-2-percent: 100%;
+    --custom-h3-gradiant-inline-2-percent: 100%;
+    --custom-h4-gradiant-inline-2-percent: 100%;
+    --custom-h5-gradiant-inline-2-percent: 100%;
+    --custom-h6-gradiant-inline-2-percent: 100%;
+
+    /* Headings Gradient Colors */
+    --custom-h1-gradiant-1: var(--custom-gold-2-950);
+    --custom-h1-gradiant-2: var(--red-400);
+    --custom-h2-gradiant-1: var(--red-300);
+    --custom-h2-gradiant-2: var(--pink-500);
+    --custom-h3-gradiant-1: var(--pink-400);
+    --custom-h3-gradiant-2: var(--fuchsia-500);
+    --custom-h4-gradiant-1: var(--fuchsia-400);
+    --custom-h4-gradiant-2: var(--blue-500);
+    --custom-h5-gradiant-1: var(--blue-400);
+    --custom-h5-gradiant-2: var(--cyan-300);
+    --custom-h6-gradiant-1: var(--cyan-200);
+    --custom-h6-gradiant-2: var(--green-400);
+
+    /* Headings Gradient Colors Alt*/
+    /* --custom-h1-gradiant-1: var(--custom-gold-950);
+    --custom-h1-gradiant-2: var(--custom-red-700);
+    --custom-h2-gradiant-1: var(--custom-red-700);
+    --custom-h2-gradiant-2: var(--custom-white-200);
+    --custom-h3-gradiant-1: var(--custom-white-200);
+    --custom-h3-gradiant-2: #2255a1;
+    --custom-h4-gradiant-1: var(--emerald-800);
+    --custom-h4-gradiant-2: var(--custom-white-200);
+    --custom-h5-gradiant-1: var(--custom-white-200);
+    --custom-h5-gradiant-2: var(--indigo-700);
+    --custom-h6-gradiant-1: var(--fuchsia-800);
+    --custom-h6-gradiant-2: var(--custom-white-200); */
+
+    /* Lists */
+    --list-marker-color-hover: var(--text-muted);
+    --list-marker-color-collapsed: var(--text-accent);
+    --custom-list-bullet-color: var(--custom-red-600);
+    --custom-list-bullet-color-even: var(--custom-grey-250);
+    --custom-ordered-list-bullet-color: var(--custom-gold-950);
+    --custom-list-line-color-odd: var(--custom-red-600);
+    --custom-list-line-color-even: var(--custom-grey-250);
+
+    /* Checkboxes */
+    --checkbox-radius: var(--radius-s);
+    --checkbox-size: 15px;
+    --checkbox-marker-color: var(--custom-gold-950);
+    --checkbox-color: var(--interactive-accent);
+    --checkbox-border-color: var(--text-faint);
+    --checkbox-border-color-hover: var(--text-muted);
+    --checklist-done-color: var(--text-faint);
+    
+    --custom-checkbox-border-image-gradient-degree-unchecked: 45deg;
+    --custom-checkbox-border-image-gradient-color-1-unchecked: var(--transparent); 
+    --custom-checkbox-border-image-gradient-color-2-unchecked: var(--custom-red-600); 
+    --custom-checkbox-border-image-gradient-degree-checked: 45deg;
+    --custom-checkbox-border-image-gradient-color-1-checked: var(--transparent); 
+    --custom-checkbox-border-image-gradient-color-2-checked: var(--custom-red-600);
+    --custom-checkbox-background-gradient-degree-checked: 45deg;
+    --custom-checkbox-background-gradient-color-1-checked: var(--white); 
+    --custom-checkbox-background-gradient-color-2-checked: var(--custom-gold-950);
+
+    /* Outliner */
+    --custom-outliner-indent-lines-color: var(--custom-red-500);
+    --custom-outliner-indent-lines-color-hover: var(--custom-gold-950);
+
+    /* Scrollbars */
+    --scrollbar-thumb-bg: var(--custom-grey-500);
+    --scrollbar-active-thumb-bg: var(--custom-gold-950);
+    --custom-scrollbar-thumb-bg-window-inactive: var(--custom-grey-500);
+    --custom-scrollbar-thumb-bg-hover: var(--custom-gold-950);
+    --scrollbar-bg: var(--custom-grey-950);
+    --custom-scrollbar-acive-track: var(--custom-grey-950);
+    --custom-scrollbar-track-bg-window-inactive: var(--custom-grey-950);
+    --custom-scrollbar-track-bg-hover: var(--custom-grey-950);
+    --custom-scrollbar-width: 12px;
+    --custom-scrollbar-height: 12px;    
+
+    /* Files and Folders Pane */
+    --custom-folder-icon-open: var(--Red-Accent-1);
+    --custom-folder-icon-closed: var(--custom-red-600);
+    --custom-folder-icon-hover: var(--custom-red-300);
+    --custom-file-icon: var(--custom-white-200);
+    --custom-file-icon-hover: var(--custom-white-100);
+    --custom-folder-file-icon-rename: var(--white);
+
+    /* Window frame */
+    --titlebar-background: var(--custom-background-tertiary);
+
+    /* Ribbon */
+    --ribbon-background: var(--custom-background-tertiary);
+
+    /* Status bar */
+    --status-bar-background: var(--custom-background-tertiary);
+
+    /* Tabs */
+    --tab-text-color: var(--text-muted);
+    --tab-text-color-focused: var(--text-muted);
+    --tab-text-color-focused-active: var(--text-normal); /*Not sure what this is used for*/
+    --tab-text-color-focused-active-current: var(--text-normal);
+
+    /* Admonition/Callouts */
+    --custom-admonition-border-color: var(--custom-black-950);
+    --custom-callout-background-color: var(--custom-black-700);
+
+    /* Blockquotes */
+    --blockquote-border-thickness: 2px;
+    --blockquote-border-color: var(--black);
+    --blockquote-font-style: normal;
+    --blockquote-color: inherit;
+    --blockquote-background-color: var(--custom-black-700);
+    --custom-blockquote-border-accent-color: var(--custom-red-600);
+
+    /* Search & Replace*/
+    --custom-match-found-indicator-color: var(--white);
+    --custom-no-match-found-input-color: var(--custom-red-600);
+    --custom-no-match-found-input-color-hover: var(--custom-red-800);
+    --custom-highlight-bg-color: var(--custom-red-900);
+
+    /* Text */
+    /* --text-normal: var(--color-base-100);
+    --text-muted: var(--color-base-70);
+    --text-faint: var(--color-base-50);
+
+    --text-normal: var(--custom-black-500);
+    --text-muted: var(--color-base-70);
+    --text-faint: var(--custom-black-100); */
+    --text-on-accent: var(--background-primary-active);
+
+    /* Override Color Accent */
+    --color-accent: var(--custom-gold-950);
+
+    /* Code */
+    --custom-code-border-color: var(--black);
+
+    /* Dropshadows */
+    --custom-global-drop-shadow: drop-shadow(2px 2px 1px var(--zinc-300)) drop-shadow(0px 0px 2px var(--zinc-300));
+    --custom-titlebar-drop-shadow: drop-shadow(0px 2px 3px var(--zinc-500)) drop-shadow(0px 2px 6px var(--zinc-500));
+    --custom-statusbar-drop-shadow: drop-shadow(2px 2px 1px var(--zinc-500)) drop-shadow(0px 0px 2px var(--zinc-500));
+
+    /* Box-Shadows */
+    --custom-active-page-shadow: inset 0px 0px 15px 8px var(--zinc-500);
+
+    /* Divider */
+    --divider-color: var(--custom-white-2-400);
+}
+.theme-dark {
     color-scheme: dark;
     --highlight-mix-blend-mode: normal;
     --mono-rgb-0: 0, 0, 0;
@@ -1089,12 +1308,15 @@ body {
     --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
     --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
     --background-modifier-form-field: var(--color-base-25);
+
+    /* Backgrounds */
     --background-primary: var(--custom-black-600);
     --background-primary-active: var(--custom-black-500);
     --background-primary-alt: var(--custom-black-800);
     --background-secondary: var(--custom-black-800);
     --background-secondary-alt: var(--custom-black-950);
     --custom-background-tertiary: var(--custom-black-850);
+
     --interactive-normal: var(--color-base-30);
     --interactive-hover: var(--color-base-35);
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -1376,6 +1598,14 @@ body {
 
     /* Code */
     --custom-code-border-color: var(--black);
+
+    /* Dropshadows */
+    --custom-global-drop-shadow: drop-shadow(2px 2px 1px var(--custom-black-800)) drop-shadow(0px 0px 2px var(--custom-black-800));
+    --custom-titlebar-drop-shadow: drop-shadow(0px 2px 3px black) drop-shadow(0px 2px 6px black);
+    --custom-statusbar-drop-shadow: drop-shadow(2px 2px 1px var(--custom-black-900)) drop-shadow(0px 0px 2px var(--custom-black-900));
+
+    /* Box-Shadows */
+    --custom-active-page-shadow: inset 0px 0px 15px 8px var(--custom-black-850);
 }
 /* SECTION ------------------------------- Core Theme Colors END ------------------------------- */
 
@@ -1581,7 +1811,7 @@ thead{
 }
 
 thead th{
-    filter: drop-shadow(2px 2px 1px var(--custom-black-800)) drop-shadow(0px 0px 2px var(--custom-black-800));
+    filter: var(--custom-global-drop-shadow);
 }
 
 /* NOTE Cell background For Even Table Column  */
@@ -1661,6 +1891,16 @@ blockquote table{
 .markdown-source-view.mod-cm6 .code-block-flair[aria-label="Copy"]:hover{
     color: var(--interactive-accent);
 }
+
+/* NOTE inline code Preview Mode */
+.markdown-rendered code, .cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight){
+    /* background: var(--background-primary); */
+    /* filter: drop-shadow(0px 0px 1px #ffffff25); */
+    /* filter: drop-shadow(0px 0px 1px var(--interactive-accent)); */
+    border: 1px solid var(--interactive-accent);
+    /* border-style: dotted; */
+    /* border: 1px solid var(--custom-red-600); */
+}
 /* SECTION ------------------------------- Code Lines and Blocks END ------------------------------- */
 /* SECTION ------------------------------- Modals START -------------------------------*/
 /* DONE */
@@ -1719,7 +1959,7 @@ button.mod-cta{
 /* DONE */
 /* NOTE Adds dropshadow to all items in edit and preview mode */
 .markdown-source-view, .markdown-preview-view{
-    filter: drop-shadow(2px 2px 1px var(--custom-black-800)) drop-shadow(0px 0px 2px var(--custom-black-800));
+    filter: var(--custom-global-drop-shadow);
     /* filter: drop-shadow(2px 2px 1px black) drop-shadow(0px 0px 2px black); */
     /* filter: drop-shadow(2px 2px 1px var(--custom-black-300)) drop-shadow(2px 2px 1px var(--custom-black-300)); */
     /* filter: drop-shadow(2px 2px 1px black) drop-shadow(2px 2px 1px black); */
@@ -1789,7 +2029,7 @@ input[type='text']:focus, input[type='search']:focus, input[type='email']:focus,
 
 /* NOTE Adds Drop Shadow To Seach Box In Preview Mode (For Some Reason Global Shadow Not Working) */
 .markdown-reading-view .document-search-container{
-    filter: drop-shadow(2px 2px 1px var(--custom-black-800)) drop-shadow(0px 0px 2px var(--custom-black-800));
+    filter: var(--custom-global-drop-shadow);
 }
 
 /* NOTE Search & Replace Container Style - On Active Note */
@@ -1875,7 +2115,14 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /* NOTE Search Highlight Active Selection - Edit Mode Only*/
 .cm-s-obsidian span.obsidian-search-match-highlight{
     background-color: var(--custom-highlight-bg-color);
+    /* background-color: red; */
+    mix-blend-mode: lighten;
     box-shadow: 0 0 0px 2px var(--custom-interactive-accent-active);
+}
+
+.cm-s-obsidian .obsidian-search-match-highlight span.cm-inline-code {
+    background-color: transparent!important;
+    border: 1px solid transparent!important;
 }
 /* SECTION ------------------------------- Search And Replace END ------------------------------- */
 
@@ -1883,7 +2130,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /* DONE */
 /* NOTE Style Of The Active Page/Note */
 .mod-root .workspace-tab-container .workspace-leaf.mod-active .view-content{
-    box-shadow:inset 0px 0px 15px 8px var(--custom-black-850);
+    box-shadow: var(--custom-active-page-shadow);
     border-top: 2px solid var(--interactive-accent);
     border-bottom: 2px solid var(--interactive-accent);
     background-color: var(--background-primary-active);
@@ -2259,6 +2506,11 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
     text-overflow: ellipsis;
     background: var(--custom-link-background-color);
     box-shadow: var(--custom-link-box-shadow);
+}
+
+/* NOTE allow internal links inside tables to span their full width */
+table :not(h1, h2, h3, h4, h5, h6) > .internal-link, .markdown-source-view.is-live-preview table span.cm-hmd-internal-link:not(.cm-header){
+    max-width: 100%;
 }
 
 /* NOTE Header Page Link  */
@@ -2875,7 +3127,7 @@ a.tag:hover{
     top: 10px;
     background: var(--background-secondary);
     border-radius: 100px;
-    filter: drop-shadow(0px 2px 3px black) drop-shadow(0px 2px 6px black);
+    filter: var(--custom-titlebar-drop-shadow);
     left: 79px;
     right: 87px;
     height: 24px;
@@ -2887,7 +3139,7 @@ a.tag:hover{
     top: 10px;
     background: var(--background-secondary);
     border-radius: 100px;
-    filter: drop-shadow(0px 2px 3px black) drop-shadow(0px 2px 6px black);
+    filter: var(--custom-titlebar-drop-shadow);
     /* height: 24px; */
 }
 
@@ -2901,7 +3153,7 @@ a.tag:hover{
     padding: 0px;
     height: 24px;
     min-width: 56px;
-    filter: drop-shadow(0px 2px 3px black) drop-shadow(0px 2px 6px black);
+    filter: var(--custom-titlebar-drop-shadow);
     /* height: 24px; */
 }
 
@@ -3393,9 +3645,7 @@ ul li:nth-child(even)::before {
 /* NOTE Statbar Styled Fulsize Across Bottom Window  */
 .status-bar{
     bottom: 13px;
-    filter: drop-shadow(2px 4px 6px black);
-    filter: drop-shadow(2px 4px 2px var(--custom-black-950)) drop-shadow(0px 0px 4px var(--custom-black-950));
-    filter: drop-shadow(2px 2px 1px var(--custom-black-900)) drop-shadow(0px 0px 2px var(--custom-black-900));
+    /* filter: var(--custom-statusbar-drop-shadow); */
     left: 45px;
     bottom: 0px;
 }
@@ -3619,7 +3869,7 @@ body:not(.native-scrollbars)  ::-webkit-scrollbar-track:hover {
         var(--custom-h1-gradiant-1) var(--custom-h1-gradiant-1-percent),
         var(--custom-h1-gradiant-2) var(--custom-h1-gradiant-2-percent)
     );
-    /* filter: drop-shadow(2px 2px 1px var(--custom-black-800)) drop-shadow(0px 0px 2px var(--custom-black-800)); */
+    /* filter: var(--custom-global-drop-shadow); */
 }
 
 /* NOTE Inline Title Underline Style */
