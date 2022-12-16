@@ -1305,9 +1305,12 @@ body {
     --color-accent-hsl: var(--accent-h),
                 var(--accent-s),
                 var(--accent-l);
-    --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    /* --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
     --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
-    --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+    --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%)); */
+    --color-accent: var(--custom-gold-950);
+    --color-accent-1: var(--custom-gold-2-500);
+    --color-accent-2: var(--custom-gold-2-950);
     --background-modifier-form-field: var(--color-base-25);
 
     /* Backgrounds */
@@ -1771,10 +1774,15 @@ body {
     filter: drop-shadow(0px 0px 3px black);
 }
 
-/* NOTE BlockQuote Edit Mode Style Left Side Accent */
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before{
+/* NOTE BlockQuote/Callout Edit Mode Style Left Side Accent */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before{
     border-left: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color);
     /* border-right: var(--blockquote-border-thickness) solid var(--custom-blockquote-border-accent-color); */
+}
+
+/* NOTE Nested BlockQuote/Callout Edit Mode Style Left Side Accent */
+.markdown-source-view.mod-cm6 .cm-blockquote-border:before{
+    border-left: var(--blockquote-border-thickness) solid var(--transparent);
 }
 
 /* NOTE BlockQuote Edit Mode Style Right Side Accent */
@@ -1801,6 +1809,11 @@ blockquote .callout{
 blockquote :not(pre) > code[class*="language-"], blockquote pre[class*="language-"]{
     border: 1px solid black;
     filter: drop-shadow(0px 0px 3px black);
+}
+
+/* NOTE Style > Character Indent For Code Blocks & Callouts When In Edit Mode */
+.markdown-source-view.mod-cm6 .cm-transparent {
+    color: var(--text-faint);
 }
 /* SECTION ------------------------------- Blockquote END------------------------------- */
 
@@ -3971,6 +3984,103 @@ body:not(.native-scrollbars)  ::-webkit-scrollbar-track:hover {
 }
 
 /* SECTION ------------------------------- CSS For Custom Mobile Specific Elements END ------------------------------- */
+
+/* SECTION ------------------------------- CSS For DB Folder START ------------------------------- */
+/* NOTE Adds Padding To The Top For Page TitleBar*/
+.database-plugin__container{
+    padding-top: calc(var(--file-margins) + 10px);
+}
+
+.database-plugin__container .database-plugin__table{
+    width: 100%!important;
+}
+
+/* NOTE Hide Legacy Link */
+.database-plugin__container .database-plugin__embed-link{
+    display: none;
+}
+
+/* NOTE Table Cell Hover */
+.database-plugin__container .database-plugin__td.data-input:hover{
+    background: var(--custom-background-tertiary)!important;
+    /* background-color: rgba(0, 0, 0, 0.45)!important; */
+    /* filter:brightness(.5); */
+}
+
+/* .database-plugin__container .database-plugin__tr:nth-child(even){
+    background: rgba(0, 0, 0, 0.15)!important;
+}
+
+.database-plugin__container .database-plugin__tr:nth-child(odd):not(:first-child){
+    background: rgba(0, 0, 0, 0.25)!important;
+} */
+
+/* NOTE Ensure Table Rows Are Transparent Before Applying My Styles */
+.database-plugin__container .database-plugin__tr{
+    background: transparent!important;
+}
+
+/* NOTE Cell background For Even Table Column  */
+.database-plugin__container .database-plugin__td:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.25)!important;
+}
+
+/* NOTE Cell background For Even Table Row  */
+.database-plugin__container .database-plugin__tr:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.25)!important;
+}
+
+/* NOTE Cell background For Entire Table Body  */
+.database-plugin__container .database-plugin__td{
+    background-color: rgba(0, 0, 0, 0.15)!important;
+    filter: var(--custom-global-drop-shadow);
+}
+
+/* NOTE Table Leftmost Index Row */
+.database-plugin__container .database-plugin__td.database-plugin__row-context-menu{
+    background: var(--custom-background-tertiary)!important;
+}
+
+/* Note Color Of Content Inside Leftmost Index Row */
+.database-plugin__container .database-plugin__row-context-menu .database-plugin__relationship{
+    background: var(--transparent)!important;
+    color:var(--text-normal);
+}
+
+/* NOTE Table Header Style */
+.database-plugin__container .database-plugin__thead{
+    background-image: linear-gradient( var(--custom-gradientDegree), var(--custom-gold-950) 0, var(--custom-red-600) 100% );
+}
+
+/* NOTE Make Header Background Transparent Since We Use Image Gradient */
+.database-plugin__container .database-plugin__header-group, 
+.database-plugin__container .database-plugin__header, 
+.database-plugin__container .database-plugin__th{
+    background: var(--transparent);
+}
+
+/* NOTE Table Header Text Color + Shadow */
+.database-plugin__container .database-plugin__th:not(svg){
+    color:var(--text-normal);
+    filter: var(--custom-global-drop-shadow);
+}
+
+/* NOTE Table Header Svg Color */
+.database-plugin__container .database-plugin__th svg{
+    stroke:var(--text-normal);
+}
+
+/* NOTE Table Column Resizer Style */
+.database-plugin__container .resizer{
+    opacity: 0;
+    background-color: var(--divider-color-hover);
+}
+
+/* NOTE Table Column Resizer Hover Style */
+.database-plugin__container .resizer:hover{
+    opacity: 1;
+}
+/* SECTION ------------------------------- CSS DB Folder END ------------------------------- */
 
 
 /* SECTION ------------------------------- MCL MULTI COLUMN CSS SNIPPET START ------------------------------- */

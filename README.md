@@ -51,9 +51,14 @@ Faded currently supports full or partial styling of the following plugins.
 	- Styles for this plugin are not throughly tested on every combanation of settings availble for the plugin. 
 
 ![](Images/OzanFileTree.png)
+
+- Basic Style Support For Database Folder Plugin.
 ## Plugins Planned For Support
 - **CodeMirror Options: **https://github.com/nothingislost/obsidian-codemirror-options
 	- Support for this plugin is unavalible for now but planned in the future. 
+- **DB Folder**:
+	- Support for this plugin is activly being worked on  
+
 ## Todo List (As of 11-19-2022)
 ![](Images/TodoList.png)
 # Kudos
