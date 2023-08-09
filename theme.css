@@ -463,7 +463,7 @@ body {
     --nav-item-weight-active: inherit;
     --nav-item-white-space: nowrap;
     --nav-item-children-margin-left: 12px; /*12px is defualt value*/
-    --nav-item-children-padding-left: 4px /*4px is defualt value*/
+    --nav-item-children-padding-left: 4px; /*4px is defualt value*/
     --nav-indentation-guide-width: var(--indentation-guide-width);
     --nav-indentation-guide-color: var(--indentation-guide-color);
     --nav-collapse-icon-color: var(--collapse-icon-color);
@@ -2377,10 +2377,9 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 }
 
 /* NOTE Align Position Of Folder Collapse Icon*/
-/*.tree-item-self tree-item-icon.collapse-icon{*/
 .tree-item-self .tree-item-icon{
-    margin-left: calc(-1 * var(--size-4-5) + 9px);
-    /*margin-left: calc(-1 * var(--size-4-5) + 13px);*/
+    /* margin-left: calc(-1 * var(--size-4-5) + 9px); */
+    margin-left: calc(-1 * var(--size-4-5) + 13px);
     /*margin-left: calc(-1 * var(--size-4-5) + 20px);*/
 }
 
@@ -2392,7 +2391,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 }
 
 /* NOTE Root Folder Highlight */
-.nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children > .tree-item.nav-folder > .tree-item-self.nav-folder-title:hover:before{
+/* .nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children > .tree-item.nav-folder > .tree-item-self.nav-folder-title:hover:before{
     position: absolute;
     content: "";
     background-color: var(--nav-item-background-hover);
@@ -2400,10 +2399,10 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
     top: 0px;
     width: 13px;
     height: 25px;
-}
+} */
 
 /* NOTE Nested Folder Highlight */
-.nav-files-container .tree-item-self.nav-folder-title:hover:before{
+/* .nav-files-container .tree-item-self.nav-folder-title:hover:before{
     position: absolute;
     content: "";
     background-color: var(--nav-item-background-hover);
@@ -2411,15 +2410,91 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
     top: 0px;
     width: 2px;
     height: 25px;
-}
+} */
 
-/* NOTE Style Applied To All Folders */
-.tree-item-self.nav-folder-title:hover{
+/* NOTE Style Applied To All Folders - AKA Remove defualt style since we nstead style via inner elements*/
+.nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children .tree-item-self.nav-folder-title:hover{
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    background-color: transparent;
 }
 
+/* NOTE Style Applied To All Files - AKA Remove defualt style since we nstead style via inner elements*/
+.nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children .tree-item-self.nav-file-title:hover,
+.nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children .tree-item-self.nav-file-title.is-active{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: transparent;
+}
 
+/* NOTE Folder On Hover Highlight/Position */
+.tree-item-self.is-clickable.mod-collapsible.nav-folder-title:hover > .tree-item-inner.nav-folder-title-content {
+    color: var(--nav-item-color-hover);
+    background-color: var(--nav-item-background-hover);
+    font-weight: var(--nav-item-weight-hover);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 100%;
+    padding: 3px;
+    margin: -3px;   
+    position: relative;
+    cursor: pointer;
+}
+
+/* NOTE Folder On Hover Highlight/Position After Element*/
+.tree-item.nav-folder.mod-root .tree-item.nav-folder .tree-item-self.is-clickable.mod-collapsible.nav-folder-title:hover:after {
+    position: absolute;
+    content: "";
+    background-color: var(--nav-item-background-hover);
+    top: 1px;
+    width: 26px;
+    height: 23px;
+    cursor: pointer;
+}
+
+/* NOTE Root Folder Highlight 0 Levels Deep*/
+.tree-item.nav-folder.mod-root .tree-item.nav-folder .tree-item-self.is-clickable.mod-collapsible.nav-folder-title:hover:after {
+    left: -13px;
+}
+
+/* NOTE Nested Folder Highlight 1 Levels Deep */
+.tree-item.nav-folder.mod-root .tree-item.nav-folder .tree-item.nav-folder .tree-item-self.is-clickable.mod-collapsible.nav-folder-title:hover:after {
+    left: 2px;
+}
+
+/* NOTE Nested Folder Highlight 2 Levels Deep */
+.tree-item.nav-folder.mod-root .tree-item.nav-folder .tree-item.nav-folder .tree-item.nav-folder .tree-item-self.is-clickable.mod-collapsible.nav-folder-title:hover:after {
+    left: 16px;
+}
+
+/* NOTE Nested Folder Highlight 3 Levels Deep */
+.tree-item.nav-folder.mod-root .tree-item.nav-folder .tree-item.nav-folder .tree-item.nav-folder .tree-item.nav-folder .tree-item-self.is-clickable.mod-collapsible.nav-folder-title:hover:after {
+    left: 31px;
+}
+
+/* NOTE Style Of Files When Hovered */
+.tree-item-inner.nav-file-title-content:hover{
+    cursor: pointer;
+}
+
+/* NOTE Style Of Files When Hovered Or Active */
+.tree-item-inner.nav-file-title-content:hover,
+.tree-item-self.is-clickable.nav-file-title.is-active .tree-item-inner.nav-file-title-content
+{
+    color: var(--nav-item-color-hover);
+    background-color: var(--nav-item-background-hover);
+    font-weight: var(--nav-item-weight-hover);
+    border-radius: 2px;
+    width: 100%;
+    padding: 3px;
+    margin: -3px;
+}
+
+/* NOTE Position Of Files In Nav */
+.tree-item-self.is-clickable.nav-file-title .tree-item-inner.nav-file-title-content{
+    padding-left: 11px;
+    margin-left: -11px;
+}
 
 /* SECTION ------------------------------- File Dock END ------------------------------- */
 /* SECTION ------------------------------- File Dock Ozan File Tree Alternative Plugin START -------------------------------*/
