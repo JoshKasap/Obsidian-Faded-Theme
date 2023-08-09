@@ -2380,7 +2380,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /*.tree-item-self tree-item-icon.collapse-icon{*/
 .tree-item-self .tree-item-icon{
     margin-left: calc(-1 * var(--size-4-5) + 9px);
-    margin-left: calc(-1 * var(--size-4-5) + 13px);
+    /*margin-left: calc(-1 * var(--size-4-5) + 13px);*/
     /*margin-left: calc(-1 * var(--size-4-5) + 20px);*/
 }
 
@@ -2391,6 +2391,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
     position: relative;
 }
 
+/* NOTE Root Folder Highlight */
 .nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children > .tree-item.nav-folder > .tree-item-self.nav-folder-title:hover:before{
     position: absolute;
     content: "";
@@ -2401,10 +2402,24 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
     height: 25px;
 }
 
+/* NOTE Nested Folder Highlight */
+.nav-files-container .tree-item-self.nav-folder-title:hover:before{
+    position: absolute;
+    content: "";
+    background-color: var(--nav-item-background-hover);
+    left: -2px;
+    top: 0px;
+    width: 2px;
+    height: 25px;
+}
+
+/* NOTE Style Applied To All Folders */
 .tree-item-self.nav-folder-title:hover{
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
+
+
 
 /* SECTION ------------------------------- File Dock END ------------------------------- */
 /* SECTION ------------------------------- File Dock Ozan File Tree Alternative Plugin START -------------------------------*/
