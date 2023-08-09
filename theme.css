@@ -462,6 +462,8 @@ body {
     --nav-item-weight-hover: inherit;
     --nav-item-weight-active: inherit;
     --nav-item-white-space: nowrap;
+    --nav-item-children-margin-left: 12px; /*12px is defualt value*/
+    --nav-item-children-padding-left: 4px /*4px is defualt value*/
     --nav-indentation-guide-width: var(--indentation-guide-width);
     --nav-indentation-guide-color: var(--indentation-guide-color);
     --nav-collapse-icon-color: var(--collapse-icon-color);
@@ -2373,6 +2375,30 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 .nav-folder.mod-root{
     border-bottom: 0px;
 }
+
+/* NOTE Align Position Of Folder Collapse Icon*/
+.tree-item-self tree-item-icon.collapse-icon{
+    margin-left: calc(-1 * var(--size-4-5) + 13px);
+    /*margin-left: calc(-1 * var(--size-4-5) + 20px);*/
+}
+
+/* NOTE Positions Folders  */
+.mod-collapsible .tree-item-inner.nav-folder-title-content{
+    /*margin-left: 14px;*/
+    left: 16px;
+    position: relative;
+}
+
+.nav-files-container > .tree-item.nav-folder.mod-root > .tree-item-children.nav-folder-children > .tree-item.nav-folder > .tree-item-self.nav-folder-title:hover:before{
+    position: absolute;
+    content: "";
+    background-color: var(--nav-item-background-hover);
+    left: -13px;
+    top: 0px;
+    width: 13px;
+    height: 25px;
+}
+
 /* SECTION ------------------------------- File Dock END ------------------------------- */
 /* SECTION ------------------------------- File Dock Ozan File Tree Alternative Plugin START -------------------------------*/
 .oz-folder-pane, .oz-file-list-pane{
