@@ -2377,7 +2377,9 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 }
 
 /* NOTE Align Position Of Folder Collapse Icon*/
-.tree-item-self tree-item-icon.collapse-icon{
+/*.tree-item-self tree-item-icon.collapse-icon{*/
+.tree-item-self .tree-item-icon{
+    margin-left: calc(-1 * var(--size-4-5) + 9px);
     margin-left: calc(-1 * var(--size-4-5) + 13px);
     /*margin-left: calc(-1 * var(--size-4-5) + 20px);*/
 }
@@ -2397,6 +2399,11 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
     top: 0px;
     width: 13px;
     height: 25px;
+}
+
+.tree-item-self.nav-folder-title:hover{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 /* SECTION ------------------------------- File Dock END ------------------------------- */
