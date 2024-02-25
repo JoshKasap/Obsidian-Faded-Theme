@@ -2476,7 +2476,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 
 /* NOTE Align Position Of Folder Collapse Icon*/
 .tree-item-self .tree-item-icon{
-    margin-left: -14px;
+    margin-left: -15px;
 }
 
 /* NOTE Positions Folders  */
