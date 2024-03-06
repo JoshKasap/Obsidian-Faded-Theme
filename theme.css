@@ -722,6 +722,8 @@ body {
     --titlebar-text-color-focused: var(--text-normal);
     --titlebar-text-color-highlighted: var(--text-accent-hover);
     --titlebar-text-weight: var(--font-bold);
+    /* Window Toolbar */
+    --frame-right-space: 126px; /*126px is defualt value*/ /*NOTE I think this just efects right padding of window min/max/expand area*/
     /* Toggles */
     --toggle-border-width: 2px;
     --toggle-width: 40px;
@@ -3923,16 +3925,52 @@ ul li:nth-child(even)::before {
     border-bottom: 36px solid var(--background-secondary);
 }
 
+/* NOTE For some reason gap, margin, and pading on these elements will cause Right Sidebar Expand/Collapse to not be clickable if behind it we are hovering over these gaps so set to 0 so Right Sidebar Expand/Collapse is always clickable*/
+.mod-right-split .workspace-tab-header-container-inner{
+    gap: 0px;
+}
+
+/* NOTE since we can use gap, margin, or padding do give spacing the Right Sidebar items we instead fake it via invisible right border applied to all but the last item */
+.mod-right-split .workspace-tab-header:not(:last-child){
+    border-right: 3px solid transparent;
+}
+
+/* NOTE this adds spacing to last item in the right sidebar so that it does not become overlaped by window Min/Max/Close btns */
+/* .mod-right-split .workspace-tab-header:last-child {
+    padding-right:40px;
+} */
+
+/* .mod-right-split > .mod-top-right-space > .workspace-tab-header-container::after {
+    content: "Apples";
+    display: block;
+} */
+
+/* .mod-right-split .workspace-tab-header:last-child::after{
+    content: "Apples";
+    display: block;
+} */
+
+/* .mod-right-split .workspace-tab-header-container-inner::after{
+    content: "Apples";
+    flex-grow: 1;
+} */
+
+/* ALERT Increasing this seems to causes the expand/collapse right sidebar btn to not be clickable at 116px rihgt-padding it seems Right Sidebar Expand/Collapse is fully clickable*/
+/* NOTE padding here is used to offset items from Right Sidebar Expand/Collapse and window Min/Max/Close so that they don't overflow behind them */
+.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .workspace-tabs.mod-top-right-space .workspace-tab-header-container, .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container{
+    padding-right: 156px;
+}
+
 /* NOTE Expands Clickable Area In Top Right Corner Allowing Right Sidebar Expand/Collapse and window Min/Max/Close To Be Clicked */
-.is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container:after{
-    width: calc(24px + var(--frame-right-space));
+.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .workspace-tabs.mod-top-right-space .workspace-tab-header-container:after, .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container:after{
+    /* width: calc(24px + var(--frame-right-space)); */
+    width: calc(156px);
     position: fixed; /*NOTE Ensures element stays in same spot no matter the number of sliding panes*/ 
 
 
     /* width: calc(100% * 100000);  */
     /* TODO Turns out making this too large covers the window toolbar preventing you from draging the obsidian window around */
     /*NOTE The number of sliding panes open effects how how large this width needs to be in order to keep the buttons clickable. So essenssially this width needs to be infinitly large. Doing so doesn't seem to have any negative effects that I can tell.*/
-
 }
 
 /* NOTE Position Right Sidebar Expand/Collapse Button To The Left Of Minimize At All Times */
