@@ -1972,15 +1972,14 @@ thead th{
     filter: var(--custom-global-drop-shadow);
 }
 
-/* NOTE Cell background For Even Table Column  */
-tbody tr td:nth-child(even){
-    background-color: rgba(0, 0, 0, 0.25)!important;
+/* NOTE Cell background For Even Table Column - tables in .markdown-rendered needed higher specificity hence the second selector */
+tbody tr td:nth-child(even), .markdown-rendered tbody tr td:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-/* NOTE Cell background For Even Table Row  */
-tr:nth-child(even){
-    background-color: rgba(0, 0, 0, 0.15)!important;
-
+/* NOTE Cell background For Even Table Row - tables in .markdown-rendered needed higher specificity hence the second selector */
+tr:nth-child(even), .markdown-rendered tr:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* NOTE Cell background For Entire Table Body  */
