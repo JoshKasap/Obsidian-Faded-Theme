@@ -2531,6 +2531,10 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 .tree-item-self .tree-item-icon{
     margin-left: -15px;
 }
+/* NOTE Align Position Of Folder Collapse Icon - for mobile*/
+.is-mobile .tree-item-self .tree-item-icon{
+    margin-left: -28px;
+}
 
 /* NOTE Positions Folders  */
 .mod-collapsible .tree-item-inner.nav-folder-title-content{
