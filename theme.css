@@ -2418,6 +2418,15 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 }
 /* SECTION ------------------------------- Graph Settings END ------------------------------- */
 
+
+/* SECTION ------------------------------- Canvas Settings START ------------------------------- */
+.canvas-controls{
+    top:42px;
+}
+/* SECTION ------------------------------- Canvas Settings END ------------------------------- */
+
+
+
 /* SECTION ------------------------------- File Dock START -------------------------------*/
 /* DONE */
 /* NOTE Page Vault Title*/
@@ -3428,6 +3437,7 @@ a.tag:hover{
     background: var(--background-secondary);
     border-radius: 100px;
     filter: var(--custom-titlebar-drop-shadow);
+    left: var(--size-4-2);
     /* height: 24px; */
 }
 
@@ -3435,12 +3445,14 @@ a.tag:hover{
 .view-header .view-actions{
     position: absolute;
     top: 10px;
-    right: 20px;
+    /* right: 20px; */
+    right: var(--size-4-2);
     background: var(--background-secondary);
     border-radius: 100px;
     padding: 0px;
     height: 24px;
-    min-width: 56px;
+    /* min-width: 56px; */
+    min-width: fit-content;
     filter: var(--custom-titlebar-drop-shadow);
     /* height: 24px; */
 }
