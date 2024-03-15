@@ -2421,6 +2421,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /* SECTION ------------------------------- Canvas Settings START ------------------------------- */
 .canvas-controls{
     top:42px;
+    right: var(--size-4-4);
 }
 /* SECTION ------------------------------- Canvas Settings END ------------------------------- */
 
@@ -3436,7 +3437,7 @@ a.tag:hover{
     background: var(--background-secondary);
     border-radius: 100px;
     filter: var(--custom-titlebar-drop-shadow);
-    left: var(--size-4-2);
+    left: var(--size-4-5);
     /* height: 24px; */
 }
 
@@ -3445,7 +3446,7 @@ a.tag:hover{
     position: absolute;
     top: 10px;
     /* right: 20px; */
-    right: var(--size-4-2);
+    right: var(--size-4-5);
     background: var(--background-secondary);
     border-radius: 100px;
     padding: 0px;
