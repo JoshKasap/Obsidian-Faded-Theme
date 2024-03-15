@@ -95,6 +95,20 @@ settings:
             - 
                 label: Disabled
                 value: none
+    - 
+        id: Vault-Title
+        title: Custom Vault Title
+        description: Enabled/Disabled Custom Style For Vault Title
+        type: class-select
+        allowEmpty: false
+        default: vaultTitle
+        options:
+            - 
+                label: Enabled
+                value: vaultTitle
+            - 
+                label: Disabled
+                value: none
 */
 
 /* @settings
@@ -2407,7 +2421,7 @@ input.document-search-input.mod-no-match:hover, input.document-replace-input.mod
 /* SECTION ------------------------------- File Dock START -------------------------------*/
 /* DONE */
 /* NOTE Page Vault Title*/
-.nav-folder.mod-root > .nav-folder-title{
+.vaultTitle .nav-folder.mod-root > .nav-folder-title{
 
     border-left: 5px solid var(--custom-background-tertiary);
     border-top: 5px solid var(--interactive-accent);
